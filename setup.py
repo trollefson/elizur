@@ -39,6 +39,7 @@ setup(
     },
     keywords="actuary, actuarial, life, contingencies, finance, math, elizur",
     long_description=readme(),
+    long_description_content_type="text/markdown",
     name="elizur",
     packages=find_packages(include=["elizur*"]),
     project_urls={
