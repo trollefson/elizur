@@ -1,0 +1,124 @@
+Table Name:,"1941 CSO Basic Table, ANB"
+Table Identity:,1
+Provider Domain:,soa.org
+Provider Name:,Roger Scott Lumsden
+Table Reference:,"Harry W. Jones, “The Commissioner’s 1941 Mortality Table” written discussion of “ The Commissioner’s 1941 Standard Mortality Table, Vol. XLII, Page 314”,  Transaction of the Society of Actuaries of America, Vol. XLIII (1942) p. 85"
+Content Type:,CSO/CET
+Table Description:,1941 Commissioners Standard Ordinary (CSO) Basic Table. Male and Female Combined. Basis: Age Nearest Birthday. Minimum Age: 1. Maximum Age: 100
+EffDate:,
+Comments:,"Study Data: The 1941 Commissioners Standard Ordinary (CSO) Experience Table (SOA Table Identity 3) is based on the experience of 16 principle life insurance companies in the United States and Canada from their policies between 1931 and 1940. The table is a composite of male and female lives but is primarily representative of male mortality. The table was graduated and loaded to provide a table with smooth rates that had a margin for safety. The margin was intended to increase the chances that the funds accumulated would be sufficient for an insurance company to meet its obligations. The 1941 CSO Experience Table was later accompanied by a Basic Table with the margins removed so that insurers could measure their own experience against the actual experience of the 16 companies. In general, this Basic Table is close to the original Experience Table but differs substantially at certain ages affected by the re-graduation. Methodology: A special iterative formula was developed for removing the margin from 1941 CSO table to find an ""unloaded"" Basic version. See SOA Table Identity 3 for construction methodology of the underlying 1941 CSO Experience Table. Note this table does not include the 1943 Bowers’ extension for age 0 that the Experience Table does. Data Transcription Errors Detected: 09/2012.  Data Corrected and Certified: 10/2012"
+Keywords:,"Aggregate,CSO/CET,United States of America"
+
+Table # ,1
+Table Description:,"1941 US Commissioners Standard Ordinary (CSO) Basic Table, Male and Female Combined. Basis: Age Nearest Birthday. Minimum Age: 1. Maximum Age: 100"
+Nation:,United States of America
+Scaling Factor:,0
+Data Type:,Floating Point
+"Row, Column (if applicable)->id:",Age
+"Row, Column (if applicable)->ScaleType:",Age
+"Row, Column (if applicable)->AxisName:",Age
+"Row, Column (if applicable)->MinScaleValue:",1
+"Row, Column (if applicable)->MaxScaleValue:",100
+"Row, Column (if applicable)->Increment:",1
+
+Row\Column,1
+1,0.00501
+2,0.00337
+3,0.00260
+4,0.00220
+5,0.00196
+6,0.00180
+7,0.00164
+8,0.00147
+9,0.00127
+10,0.00111
+11,0.00103
+12,0.00103
+13,0.00107
+14,0.00115
+15,0.00121
+16,0.00123
+17,0.00127
+18,0.00131
+19,0.00136
+20,0.00140
+21,0.00146
+22,0.00152
+23,0.00159
+24,0.00165
+25,0.00174
+26,0.00182
+27,0.00192
+28,0.00203
+29,0.00215
+30,0.00228
+31,0.00242
+32,0.00258
+33,0.00275
+34,0.00295
+35,0.00315
+36,0.00338
+37,0.00363
+38,0.00390
+39,0.00421
+40,0.00453
+41,0.00489
+42,0.00528
+43,0.00571
+44,0.00618
+45,0.00669
+46,0.00725
+47,0.00786
+48,0.00852
+49,0.00926
+50,0.01005
+51,0.01092
+52,0.01186
+53,0.01289
+54,0.01402
+55,0.01524
+56,0.01658
+57,0.01803
+58,0.01961
+59,0.02134
+60,0.02321
+61,0.02525
+62,0.02748
+63,0.02988
+64,0.03251
+65,0.03537
+66,0.03847
+67,0.04183
+68,0.04548
+69,0.04945
+70,0.05375
+71,0.05841
+72,0.06345
+73,0.06892
+74,0.07483
+75,0.08123
+76,0.08814
+77,0.09559
+78,0.10364
+79,0.11230
+80,0.12163
+81,0.13166
+82,0.14243
+83,0.15397
+84,0.16634
+85,0.17954
+86,0.19364
+87,0.20863
+88,0.22460
+89,0.24147
+90,0.25928
+91,0.27798
+92,0.29755
+93,0.31776
+94,0.33846
+95,0.35830
+96,0.39994
+97,0.48251
+98,0.61759
+99,0.77724
+100,1.00000

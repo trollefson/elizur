@@ -1,0 +1,508 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Annuity &mdash; elizur v0.1 Documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Table" href="table.html" />
+    <link rel="prev" title="Life" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #520707" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> elizur
+          
+
+          
+            
+            <img src="../_static/elizur_avatar.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Life</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Annuity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="util.html">Util</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">elizur</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Life</a> &raquo;</li>
+        
+      <li>Annuity</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/life/annuity.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="annuity">
+<span id="id1"></span><h1>Annuity<a class="headerlink" href="#annuity" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-elizur.life.annuity"></span><dl class="function">
+<dt id="elizur.life.annuity.annuity_due_fv">
+<code class="sig-prename descclassname">elizur.life.annuity.</code><code class="sig-name descname">annuity_due_fv</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.annuity.annuity_due_fv" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Future value of annuity of n years with an interest rate of i</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="elizur.life.annuity.annuity_due_pv">
+<code class="sig-prename descclassname">elizur.life.annuity.</code><code class="sig-name descname">annuity_due_pv</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.annuity.annuity_due_pv" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Present value of annuity of n years with an interest rate of i</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="elizur.life.annuity.annuity_fv">
+<code class="sig-prename descclassname">elizur.life.annuity.</code><code class="sig-name descname">annuity_fv</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.annuity.annuity_fv" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Future value of annuity of n years with an interest rate of i</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="elizur.life.annuity.annuity_pv">
+<code class="sig-prename descclassname">elizur.life.annuity.</code><code class="sig-name descname">annuity_pv</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.annuity.annuity_pv" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Present value of annuity of n years with an interest rate of i</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="elizur.life.annuity.decreasing_annuity_due_fv">
+<code class="sig-prename descclassname">elizur.life.annuity.</code><code class="sig-name descname">decreasing_annuity_due_fv</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.annuity.decreasing_annuity_due_fv" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Future value of a decreasing annuity due of n years with
+an interest rate of i.  It is assumed that the annuity payment
+decrements by 1 each period.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="elizur.life.annuity.decreasing_annuity_due_pv">
+<code class="sig-prename descclassname">elizur.life.annuity.</code><code class="sig-name descname">decreasing_annuity_due_pv</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.annuity.decreasing_annuity_due_pv" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Present value of a decreasing annuity due of n years with
+an interest rate of i.  It is assumed that the annuity payment
+decrements by 1 each period.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="elizur.life.annuity.decreasing_annuity_fv">
+<code class="sig-prename descclassname">elizur.life.annuity.</code><code class="sig-name descname">decreasing_annuity_fv</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.annuity.decreasing_annuity_fv" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Future value of a decreasing annuity of n years with
+an interest rate of i.  It is assumed that the annuity payment
+decrements by 1 each period.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="elizur.life.annuity.decreasing_annuity_pv">
+<code class="sig-prename descclassname">elizur.life.annuity.</code><code class="sig-name descname">decreasing_annuity_pv</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.annuity.decreasing_annuity_pv" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Present value of a decreasing annuity of n years with
+an interest rate of i.  It is assumed that the annuity payment
+decrements by 1 each period.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="elizur.life.annuity.discount_factor">
+<code class="sig-prename descclassname">elizur.life.annuity.</code><code class="sig-name descname">discount_factor</code><span class="sig-paren">(</span><em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.annuity.discount_factor" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i</strong> – interest rate in decimal form</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The related discount factor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="elizur.life.annuity.discount_rate">
+<code class="sig-prename descclassname">elizur.life.annuity.</code><code class="sig-name descname">discount_rate</code><span class="sig-paren">(</span><em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.annuity.discount_rate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i</strong> – interest rate in decimal form</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The related discount rate</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="elizur.life.annuity.geo_increasing_annuity_pv">
+<code class="sig-prename descclassname">elizur.life.annuity.</code><code class="sig-name descname">geo_increasing_annuity_pv</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">i: int</em>, <em class="sig-param">k: int</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.annuity.geo_increasing_annuity_pv" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+<li><p><strong>k</strong> – periodic payment growth rate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Present value of a geometrically increasing annuity of
+n years with an interest rate of i and payment growth rate
+of k.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="elizur.life.annuity.increasing_annuity_due_fv">
+<code class="sig-prename descclassname">elizur.life.annuity.</code><code class="sig-name descname">increasing_annuity_due_fv</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.annuity.increasing_annuity_due_fv" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Future value of an increasing annuity due of n years with
+an interest rate of i.  It is assumed that the annuity payment
+increments by 1 each period.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="elizur.life.annuity.increasing_annuity_due_pv">
+<code class="sig-prename descclassname">elizur.life.annuity.</code><code class="sig-name descname">increasing_annuity_due_pv</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.annuity.increasing_annuity_due_pv" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Present value of an increasing annuity due of n years with
+an interest rate of i.  It is assumed that the annuity payment
+increments by 1 each period.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="elizur.life.annuity.increasing_annuity_fv">
+<code class="sig-prename descclassname">elizur.life.annuity.</code><code class="sig-name descname">increasing_annuity_fv</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.annuity.increasing_annuity_fv" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Future value of an increasing annuity of n years with
+an interest rate of i.  It is assumed that the annuity payment
+increments by 1 each period.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="elizur.life.annuity.increasing_annuity_pv">
+<code class="sig-prename descclassname">elizur.life.annuity.</code><code class="sig-name descname">increasing_annuity_pv</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.annuity.increasing_annuity_pv" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Present value of an increasing annuity of n years with
+an interest rate of i.  It is assumed that the annuity payment
+increments by 1 each period.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="elizur.life.annuity.interest_rate">
+<code class="sig-prename descclassname">elizur.life.annuity.</code><code class="sig-name descname">interest_rate</code><span class="sig-paren">(</span><em class="sig-param">d: float</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.annuity.interest_rate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>d</strong> – discount rate in decimal form</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The related interest rate in decimal form</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="elizur.life.annuity.perpetuity_due_pv">
+<code class="sig-prename descclassname">elizur.life.annuity.</code><code class="sig-name descname">perpetuity_due_pv</code><span class="sig-paren">(</span><em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.annuity.perpetuity_due_pv" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i</strong> – periodic interest rate in decimal form</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Present value of a perpetuity due with an interest rate of i</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="elizur.life.annuity.perpetuity_pv">
+<code class="sig-prename descclassname">elizur.life.annuity.</code><code class="sig-name descname">perpetuity_pv</code><span class="sig-paren">(</span><em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.annuity.perpetuity_pv" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>i</strong> – periodic interest rate in decimal form</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Present value of a perpetuity with an interest rate of i</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="table.html" class="btn btn-neutral float-right" title="Table" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Life" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Tanner Rollefson
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

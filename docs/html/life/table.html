@@ -1,0 +1,633 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Table &mdash; elizur v0.1 Documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Util" href="util.html" />
+    <link rel="prev" title="Annuity" href="annuity.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #520707" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> elizur
+          
+
+          
+            
+            <img src="../_static/elizur_avatar.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Life</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="annuity.html">Annuity</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="util.html">Util</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">elizur</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Life</a> &raquo;</li>
+        
+      <li>Table</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/life/table.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="table">
+<span id="id1"></span><h1>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="elizur.life.table.LifeTable">
+<em class="property">class </em><code class="sig-prename descclassname">elizur.life.table.</code><code class="sig-name descname">LifeTable</code><span class="sig-paren">(</span><em class="sig-param">table: Tuple[float], name: str = '', description: str = '', initial_pop: int = 100000</em><span class="sig-paren">)</span><a class="headerlink" href="#elizur.life.table.LifeTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given an input tuple of failure probabilities this class is capable
+of calculating common actuarial functions such as qx, px, lx, dx,
+ex, mx, w, nqx, npx, nlx, ndx, nmx, tqxn, Dx, Sx, Nx, Cx, Mx, Rx, actuarial
+present value of annuities, and actuarial present value of insurances.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> – collection of failure probabilities in sequentiali
+order, e.g. (1q0, 2q1, …, 100q99)</p></li>
+<li><p><strong>initial_pop</strong> – the size of the initial population (l0)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.dx">
+<code class="sig-name descname">dx</code><span class="sig-paren">(</span><em class="sig-param">x: int</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.dx" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>The number of failures between ages x and x + 1</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.qx">
+<code class="sig-name descname">qx</code><span class="sig-paren">(</span><em class="sig-param">x: int</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.qx" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>The probability of failure between the ages x and x + 1</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.px">
+<code class="sig-name descname">px</code><span class="sig-paren">(</span><em class="sig-param">x: int</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.px" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>The probability of survival between the ages x and x + 1</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.lx">
+<code class="sig-name descname">lx</code><span class="sig-paren">(</span><em class="sig-param">x: int</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.lx" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>The population size at age x.  This is the same thing as the
+number of person years lived between age x and x + 1.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.ex">
+<code class="sig-name descname">ex</code><span class="sig-paren">(</span><em class="sig-param">x: int</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.ex" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>The curtate life expectation at age x</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.mx">
+<code class="sig-name descname">mx</code><span class="sig-paren">(</span><em class="sig-param">x: int</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.mx" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>The central failure rate between ages x and x + 1</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.nqx">
+<code class="sig-name descname">nqx</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">x: int</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.nqx" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>n</strong> - width of failure interval in years</p></li>
+<li><p><strong>x</strong> - start age</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>The probability of failure between ages x and x + n</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.npx">
+<code class="sig-name descname">npx</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">x: int</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.npx" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>n</strong> - width of failure interval in years</p></li>
+<li><p><strong>x</strong> - start age</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>The probability of survival between ages x and x + n</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.nlx">
+<code class="sig-name descname">nlx</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">x: int</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.nlx" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>n</strong> - width of failure interval in years</p></li>
+<li><p><strong>x</strong> - start age</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>The number of person years lived between ages x and x + n</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.ndx">
+<code class="sig-name descname">ndx</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">x: int</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.ndx" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>n</strong> - width of failure interval in years</p></li>
+<li><p><strong>x</strong> - start age</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>The number of failures between ages x and x + n</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.nmx">
+<code class="sig-name descname">nmx</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">x: int</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.nmx" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>n</strong> - width of failure interval in years</p></li>
+<li><p><strong>x</strong> - start age</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>The central failure rate between ages x and x + n</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.tqxn">
+<code class="sig-name descname">tqxn</code><span class="sig-paren">(</span><em class="sig-param">t: int</em>, <em class="sig-param">n: int</em>, <em class="sig-param">x: int</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.tqxn" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>t</strong> - width of the failure interval in years</p></li>
+<li><p><strong>n</strong> - width of failure interval in years</p></li>
+<li><p><strong>x</strong> - start age</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>The probability of surviving from age x to x + n and
+then failing between age x + n and age x + n + t</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.Dx">
+<code class="sig-name descname">Dx</code><span class="sig-paren">(</span><em class="sig-param">x: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.Dx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actuarial commutation function Dx</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+<li><p><strong>i</strong> - interest rate</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>Population at age x discounted for x years</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.Nx">
+<code class="sig-name descname">Nx</code><span class="sig-paren">(</span><em class="sig-param">x: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.Nx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actuarial commutation function Nx</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+<li><p><strong>i</strong> - interest rate</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>Sum of Ds from age x and onward</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.Sx">
+<code class="sig-name descname">Sx</code><span class="sig-paren">(</span><em class="sig-param">x: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.Sx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actuarial commutation function Sx</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+<li><p><strong>i</strong> - interest rate</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>Sum of Ns from age x and onward</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.Cx">
+<code class="sig-name descname">Cx</code><span class="sig-paren">(</span><em class="sig-param">x: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.Cx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actuarial commutation function Cx</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+<li><p><strong>i</strong> - interest rate</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>Failures between x and x + 1 discounted for x years</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.Mx">
+<code class="sig-name descname">Mx</code><span class="sig-paren">(</span><em class="sig-param">x: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.Mx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actuarial commutation function Mx</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+<li><p><strong>i</strong> - interest rate</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>Sum of Cs from age x and onward</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.Rx">
+<code class="sig-name descname">Rx</code><span class="sig-paren">(</span><em class="sig-param">x: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.Rx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Actuarial commutation function Rx</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+<li><p><strong>i</strong> - interest rate</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>Sum of Ms from age x and onward</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.Ax">
+<code class="sig-name descname">Ax</code><span class="sig-paren">(</span><em class="sig-param">x: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.Ax" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+<li><p><strong>i</strong> - interest rate</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>Actuarial present value of level whole insurance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.Axn">
+<code class="sig-name descname">Axn</code><span class="sig-paren">(</span><em class="sig-param">x: int</em>, <em class="sig-param">i: float</em>, <em class="sig-param">n: int</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.Axn" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+<li><p><strong>i</strong> - interest rate</p></li>
+<li><p><strong>n</strong> - number of periods in the temporary insurance</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>Actuarial present value of level temporary insurance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.IAx">
+<code class="sig-name descname">IAx</code><span class="sig-paren">(</span><em class="sig-param">x: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.IAx" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+<li><p><strong>i</strong> - interest rate</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>Actuarial present value of increasing whole insurance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.IAxn">
+<code class="sig-name descname">IAxn</code><span class="sig-paren">(</span><em class="sig-param">x: int</em>, <em class="sig-param">i: float</em>, <em class="sig-param">n: int</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.IAxn" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+<li><p><strong>i</strong> - interest rate</p></li>
+<li><p><strong>n</strong> - number of periods in the temporary insurance</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>Actuarial present value of increasing temporary insurance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.ax">
+<code class="sig-name descname">ax</code><span class="sig-paren">(</span><em class="sig-param">x: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.ax" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+<li><p><strong>i</strong> - interest rate</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>Actuarial present value of a level perpetuity</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.axn">
+<code class="sig-name descname">axn</code><span class="sig-paren">(</span><em class="sig-param">x: int</em>, <em class="sig-param">i: float</em>, <em class="sig-param">n: int</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.axn" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+<li><p><strong>i</strong> - interest rate</p></li>
+<li><p><strong>n</strong> - length of payments</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>Actuarial present value of a temporary annuity</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.ax_due">
+<code class="sig-name descname">ax_due</code><span class="sig-paren">(</span><em class="sig-param">x: int</em>, <em class="sig-param">i: float</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.ax_due" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+<li><p><strong>i</strong> - interest rate</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>Actuarial present value of a level perpetuity due</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.axn_due">
+<code class="sig-name descname">axn_due</code><span class="sig-paren">(</span><em class="sig-param">x: int</em>, <em class="sig-param">i: float</em>, <em class="sig-param">n: int</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.axn_due" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>x</strong> - start age</p></li>
+<li><p><strong>i</strong> - interest rate</p></li>
+<li><p><strong>n</strong> - length of payments</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>Actuarial present value of a temporary annuity due</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.get_lxs">
+<code class="sig-name descname">get_lxs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Tuple[float]<a class="headerlink" href="#elizur.life.table.LifeTable.get_lxs" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A tuple of the population counts (lxs)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.get_qxs">
+<code class="sig-name descname">get_qxs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Tuple[float]<a class="headerlink" href="#elizur.life.table.LifeTable.get_qxs" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A tuple of the failure
+probabilities (qxs), e.g., (0q1, 2q1, …, 100q99)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.w">
+<em class="property">property </em><code class="sig-name descname">w</code><a class="headerlink" href="#elizur.life.table.LifeTable.w" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+The limiting age of the life table</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="util.html" class="btn btn-neutral float-right" title="Util" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="annuity.html" class="btn btn-neutral float-left" title="Annuity" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Tanner Rollefson
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

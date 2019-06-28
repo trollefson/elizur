@@ -1,0 +1,12 @@
+*.pyc
+/dist/
+/*.egg-info
+/build/
+/.idea/
+/test-reports/
+.coverage
+coverage.xml
+*.swp
+*.swo
+/venv/
+dev/
