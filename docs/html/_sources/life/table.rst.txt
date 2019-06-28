@@ -111,7 +111,7 @@ Table
         Args:
             * **t** - width of the failure interval in years
 
-            * **n** - width of failure interval in years
+            * **n** - width of the survival interval in years
 
             * **x** - start age
 
