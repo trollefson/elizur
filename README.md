@@ -96,6 +96,16 @@ Import a mortality table in a specific SOA CSV format and perform life contingen
 
 There are many other possibilities.  Check out the reference section of the [docs](https://trollefson.github.io/elizur) for a full list of functionality.
 
+## What's Next?
+
+* Endowments
+* Deferred Insurance
+* Value-at-Risk (Var)
+* Tail Value-at-Risk (TVar)
+* Sharpe Ratio
+* Option and derivate pricing
+* And more
+
 ## Chat
 
 If you have questions, suggestions, or just want to talk about using Python join us on Slack [here](https://elizurchat-slackin.herokuapp.com).
