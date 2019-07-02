@@ -119,9 +119,7 @@ If you have questions, suggestions, or just want to talk about using Python join
 Contributing
 ============
 
-Do you want to help this project without contributing code?  Take our survey `here <https://www.surveymonkey.com/r/BZ55VPH>`_.  
-
-Otherwise checkout the contributing guide  `here <https://github.com/trollefson/elizur/blob/master/CONTRIBUTING.md>`_.
+Checkout the contributing guide `here <https://github.com/trollefson/elizur/blob/master/CONTRIBUTING.md>`_ if you'd like to contribute code or raise issues `here <https://github.com/trollefson/elizur/issues>`_.
 
 
 New to Python?
