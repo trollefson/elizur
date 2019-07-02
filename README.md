@@ -6,7 +6,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/trollefson/elizur/badge.svg?branch=master)](https://coveralls.io/github/trollefson/elizur?branch=master)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
-Elizur is an open source finance library for actuaries, finance professionals, and students.  The library currently helps with calculating present values, future values, expected present values, life contingencies, and other common procedures performed by professionals and students.  The library is free of charge, open source, well tested, documented, and depends only on the Python 3 standard library at runtime.  The Elizur project is named after Elizur Wright.
+Elizur is an open source finance library for actuaries, finance professionals, and students.  The library currently helps with calculating present values, future values, expected present values, life contingencies, and other common procedures performed by professionals and students.  The library is intended to help with exam formula and other general finance calculations.  It is not a place for real world modeling solutions like IFRS17 or Solvency II.  The library will remain a library.  If you'd like to create a web ui or desktop application with Elizur please start a seperate project and include Elizur as a dependency.  The library is free of charge, open source, well tested, documented, and depends only on the Python 3 standard library at runtime.  The Elizur project is named after [Elizur Wright](https://en.wikipedia.org/wiki/Elizur_Wright).
 
 If you like Elizur, support the project by clicking the :star: above!
 
@@ -112,9 +112,7 @@ If you have questions, suggestions, or just want to talk about using Python join
 
 ## Contributing
 
-Do you want to help this project without contributing code?  Take our survey [here](https://www.surveymonkey.com/r/BZ55VPH).  
-
-Otherwise checkout the contributing guide [here](https://github.com/trollefson/elizur/blob/master/CONTRIBUTING.md) if you like to contribute code or raise issues.
+Checkout the contributing guide [here](https://github.com/trollefson/elizur/blob/master/CONTRIBUTING.md) if you'd like to contribute code or raise issues [here](https://github.com/trollefson/elizur/issues).
 
 ## New to Python?
 

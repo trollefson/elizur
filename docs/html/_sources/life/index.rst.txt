@@ -1,3 +1,6 @@
+.. automodule:: elizur.life
+    :members:
+
 Life
 ====
 .. toctree::
