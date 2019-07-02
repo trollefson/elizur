@@ -10,9 +10,9 @@ Welcome to Elizur's documentation!
 .. image:: https://coveralls.io/repos/github/trollefson/elizur/badge.svg?branch=master
     :target: https://coveralls.io/github/trollefson/elizur?branch=master
 
-Elizur is an open source finance library for actuaries, finance professionals, and students.  The library currently helps with calculating present values, future values, expected present values, life contingencies, and other common procedures performed by professionals and students.  The library is free of charge, open source, well tested, documented, and depends only on the Python 3 standard library at runtime.  The Elizur project is named after Elizur Wright.
+Elizur is an open source finance library for actuaries, finance professionals, and students.  The library currently helps with calculating present values, future values, expected present values, life contingencies, and other common procedures performed by professionals and students.  The library is intended to help with exam formula and other general finance calculations.  It is not a place for real world modeling solutions like IFRS17 or Solvency II.  The library will remain a library.  If you'd like to create a web ui or desktop application with Elizur please start a seperate project and include Elizur as a dependency.  The library is free of charge, open source, well tested, documented, and depends only on the Python 3 standard library at runtime.  The Elizur project is named after `Elizur Wright <https://en.wikipedia.org/wiki/Elizur_Wright>`_.
 
-If you like Elizur, support the project by starring it on GitHub.
+If you like Elizur, support the project by starring it on `GitHub <https://github.com/trollefson/elizur>`_.
 
 Requirements
 ============
