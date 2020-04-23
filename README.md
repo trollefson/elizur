@@ -38,8 +38,7 @@ Given a term and interest rate calculate the present value of an annuity
 >>> import elizur.life.annuity as ann
 >>> ann.annuity_pv(n=10, i=0.07)
 7.023581540932602
-```
-
+``` 
 Given a term and interest rate calculate the present value of an annuity increasing by one each period
 
 ```python
@@ -104,18 +103,7 @@ There are many other possibilities.  Check out the reference section of the [doc
 * Tail Value-at-Risk (TVar)
 * Sharpe Ratio
 * Option and derivate pricing
-* And more
-
-## Chat
-
-If you have questions, suggestions, or just want to talk about using Python join us on Slack [here](https://elizurchat-slackin.herokuapp.com).
 
 ## Contributing
 
 Checkout the contributing guide [here](https://github.com/trollefson/elizur/blob/master/CONTRIBUTING.md) if you'd like to contribute code or raise issues [here](https://github.com/trollefson/elizur/issues).
-
-## New to Python?
-
-* Join us on Slack [here](https://elizurchat-slackin.herokuapp.com) and we will help you get started!
-* Checkout [this](https://www.udacity.com/course/introduction-to-python--ud1110) course from Udacity
-* Checkout the [Learn Python 3 The Hard Way](https://www.oreilly.com/library/view/learn-python-3/9780134693866/) book
