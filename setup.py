@@ -25,6 +25,7 @@ setup(
         "Intended Audience :: Financial and Insurance Industry",
     ],
     description="Elizur is a finance library for actuaries, finance professionals, and students.",
+    install_requires=["numpy>=1.18"],
     extras_require={
         "dev": [
             "black",
