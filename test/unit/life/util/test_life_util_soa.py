@@ -5,11 +5,8 @@ from os.path import join
 import pytest
 
 from elizur.life.table import LifeTable
-from elizur.life.util import (
-    _open_soa_csv_mort_table,
-    _process_soa_csv_mort_table,
-    read_soa_csv_mort_table,
-)
+from elizur.life.util import read_soa_csv_mort_table
+from elizur.life.util.soa import _open_soa_csv_mort_table, _process_soa_csv_mort_table
 
 
 EXPECTED_QXS = (
