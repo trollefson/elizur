@@ -2,5 +2,5 @@
 
 Util
 ====
-.. automodule:: elizur.life.util
+.. automodule:: elizur.life.util.soa
     :members:
