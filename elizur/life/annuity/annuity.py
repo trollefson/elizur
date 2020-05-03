@@ -1,4 +1,5 @@
-from typing import Union
+import numbers
+from typing import Iterable, Union
 
 import numpy as np
 
@@ -228,8 +229,10 @@ def decreasing_annuity_due_fv(
 
 
 def geo_increasing_annuity_pv(
-    n: Union[int, np.array], i: Union[int, np.array], k: Union[int, np.array]
-) -> Union[float, np.array]:
+    n: Union[int, Iterable, np.array],
+    i: Union[int, Iterable, np.array],
+    k: Union[int, Iterable, np.array],
+) -> Union[float, Iterable, np.array]:
     """
     Args:
         n: years
@@ -240,8 +243,15 @@ def geo_increasing_annuity_pv(
         n years with an interest rate of i and payment growth rate
         of k.
     """
-    if k == 0:
-        return annuity_pv(n, i)
-    if k == i:
-        return np.multiply(n, discount_factor(i))
-    return np.divide(1 - np.power(np.divide(1 + k, 1 + i), n), i - k)
+    result = []
+    n = list(n) if not isinstance(n, numbers.Number) else [n]
+    i = list(i) if not isinstance(i, numbers.Number) else [i]
+    k = list(k) if not isinstance(k, numbers.Number) else [k]
+    for index, growth_rate in enumerate(k):
+        if growth_rate == 0:
+            result.append(annuity_pv(n, i))
+        elif growth_rate == i[index]:
+            result.append(np.multiply(n, discount_factor(i)))
+        else:
+            result.append(np.divide(1 - np.power(np.divide(np.add(1, k), np.add(1, i)), n), np.subtract(i, k)))
+    return np.array(result) if len(result) > 1 else result[0]
