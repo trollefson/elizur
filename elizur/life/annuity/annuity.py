@@ -263,5 +263,10 @@ def geo_increasing_annuity_pv(
         elif growth_rate == i[index]:
             result.append(np.multiply(n, discount_factor(i)))
         else:
-            result.append(np.divide(1 - np.power(np.divide(np.add(1, k), np.add(1, i)), n), np.subtract(i, k)))
+            result.append(
+                np.divide(
+                    1 - np.power(np.divide(np.add(1, k), np.add(1, i)), n),
+                    np.subtract(i, k),
+                )
+            )
     return np.array(result) if len(result) > 1 else result[0]

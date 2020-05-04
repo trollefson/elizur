@@ -301,7 +301,9 @@ def test_life_table__get_lxs(life_table):
     test_lxs = [L0]
     for i in TEST_TABLE:
         test_lxs.append(test_lxs[-1] * (1 - i))
-    assert life_table.get_lxs() == tuple(test_lxs)
+    lxs = life_table.get_lxs()
+    for index in range(len(lxs)):
+        assert round(lxs[index], 7) == round(test_lxs[index], 7)
 
 
 def test_life_table__can_have_name():
@@ -583,3 +585,39 @@ def test_life_table__axn_due(life_table):
     )
     actual = life_table.axn_due(0, 0.07, 3)
     assert round(expected, 7) == round(actual, 7)
+
+
+def test_life_table__qxs(life_table):
+    qxs = life_table.qxs
+    for index in range(qxs.size):
+        assert qxs[index] == life_table.qx(index)
+
+
+def test_life_table__pxs(life_table):
+    pxs = life_table.pxs
+    for index in range(pxs.size):
+        assert pxs[index] == life_table.px(index)
+
+
+def test_life_table__lxs(life_table):
+    lxs = life_table.lxs
+    for index in range(lxs.size):
+        assert lxs[index] == life_table.lx(index)
+
+
+def test_life_table__npxs(life_table):
+    npxs = life_table.npxs(10)
+    for index in range(npxs.size):
+        assert npxs[index] == life_table.npx(10, index)
+
+
+def test_life_table__nqxs(life_table):
+    nqxs = life_table.nqxs(10)
+    for index in range(nqxs.size):
+        assert nqxs[index] == life_table.nqx(10, index)
+
+
+def test_life_table__tqxns(life_table):
+    tqxns = life_table.tqxns(5, 10)
+    for index in range(tqxns.size):
+        assert tqxns[index] == life_table.tqxn(5, 10, index)

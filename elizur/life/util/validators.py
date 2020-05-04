@@ -46,6 +46,33 @@ def validate_age(func: Callable) -> Callable:
     return validated_func
 
 
+def validate_interval(func: Callable) -> Callable:
+    # pylint: disable=unused-argument
+    """
+    Decorator for validating methods using actuarial notation
+    interval input
+
+    Args:
+        func: function with inputs to validate
+
+    Returns:
+        The passed in function wrapped with input validation
+    """
+
+    def validated_func(*args, **kwargs):
+        """
+        Args:
+            arg[1] (int): interval
+        """
+        if args[1] < 0:
+            return 0.0
+        return func(*args, **kwargs)
+
+    validated_func.__doc__ = func.__doc__
+
+    return validated_func
+
+
 def validate_age_and_interval(func: Callable) -> Callable:
     # pylint: disable=unused-argument
     """

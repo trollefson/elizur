@@ -1,8 +1,11 @@
-from typing import Callable, Tuple
+from typing import Union, Iterable, Tuple
+
+import numpy as np
 
 from elizur.life.annuity import discount_factor
 from elizur.life.util import (
     validate_age,
+    validate_interval,
     validate_age_and_interest,
     validate_age_and_interval,
     validate_age_interest_and_interval,
@@ -18,20 +21,23 @@ class LifeTable:
     present value of annuities, and actuarial present value of insurances.
 
     Args:
-        table: collection of failure probabilities in sequentiali
-               order, e.g. (1q0, 2q1, ..., 100q99)
+        table: iterable of failure probabilities as floats in
+               sequential order, e.g. (1q0, 2q1, ..., 100q99)
         initial_pop: the size of the initial population (l0)
     """
 
     def __init__(
         self,
-        table: Tuple[float],
+        table: Union[Iterable, np.array],
         name: str = "",
         description: str = "",
         initial_pop: int = 100000,
     ):
-        self._qxs = table
-        self._lxs = self._set_lxs(initial_pop)
+        self.qxs = np.array(table)
+        self.pxs = 1 - self.qxs
+        self.lxs = self._set_lxs(initial_pop)
+        self.dxs = -1 * np.diff(self.lxs)
+        self.mxs = np.divide(self.dxs, self.lxs[:-1])
         self.name = name
         self.description = description
 
@@ -40,10 +46,7 @@ class LifeTable:
         Args:
             l0: the size of the initial population
         """
-        lxs = [l0]
-        for qx in self._qxs:
-            lxs.append(lxs[-1] * (1 - qx))
-        return tuple(lxs)
+        return l0 * np.insert(np.cumprod(self.pxs), 0, 1)
 
     @property
     def w(self) -> int:
@@ -62,7 +65,7 @@ class LifeTable:
         Returns:
             The probability of failure between the ages x and x + 1
         """
-        return self._qxs[x]
+        return self.qxs[x]
 
     @validate_age
     def px(self, x: int) -> float:
@@ -73,7 +76,7 @@ class LifeTable:
         Returns:
             The probability of survival between the ages x and x + 1
         """
-        return 1 - self._qxs[x]
+        return self.pxs[x]
 
     @validate_age
     def lx(self, x: int) -> float:
@@ -85,7 +88,7 @@ class LifeTable:
             The population size at age x.  This is the same thing as the
             number of person years lived between age x and x + 1.
         """
-        return self._lxs[x]
+        return self.lxs[x]
 
     @validate_age
     def dx(self, x: int) -> float:
@@ -96,7 +99,17 @@ class LifeTable:
         Returns:
             The number of failures between ages x and x + 1
         """
-        return self.lx(x) - self.lx(x + 1)
+        return self.dxs[x]
+
+    @validate_age
+    def mx(self, x: int) -> float:
+        """
+        Args:
+            x: start age
+        Returns:
+            The central failure rate between ages x and x + 1
+        """
+        return self.mxs[x]
 
     @validate_age
     def ex(self, x: int) -> float:
@@ -107,17 +120,7 @@ class LifeTable:
         Returns:
             The curtate life expectation at age x
         """
-        return sum([self.lx(t + x) / self.lx(x) for t in range(1, self.w - x)])
-
-    @validate_age
-    def mx(self, x: int) -> float:
-        """
-        Args:
-            x: start age
-        Returns:
-            The central failure rate between ages x and x + 1
-        """
-        return self.dx(x) / self.lx(x)
+        return sum([self.lxs[t + x] / self.lxs[x] for t in range(1, self.w - x)])
 
     @validate_age_and_interval
     def nqx(self, n: int, x: int) -> float:
@@ -129,7 +132,24 @@ class LifeTable:
         Returns:
             The probability of failure between ages x and x + n
         """
-        return (self.lx(x) - self.lx(n + x)) / self.lx(x)
+        return (self.lxs[x] - self.lxs[n + x]) / self.lxs[x]
+
+    @validate_interval
+    def nqxs(self, n: int) -> np.array:
+        """
+        Args:
+            n: width of failure interval in years
+
+        Returns:
+            The probability of failure between ages x and x + n for all ages
+        """
+        return np.array(
+            [
+                (self.lx(x) - self.lx(x + n)) / self.lx(x)
+                for x in range(self.lxs.size)
+                if x + n < self.lxs.size
+            ]
+        )
 
     @validate_age_and_interval
     def npx(self, n: int, x: int) -> float:
@@ -141,7 +161,24 @@ class LifeTable:
         Returns:
             The probability of survival between ages x and x + n
         """
-        return self.lx(n + x) / self.lx(x)
+        return self.lxs[n + x] / self.lxs[x]
+
+    @validate_interval
+    def npxs(self, n: int) -> np.array:
+        """
+        Args:
+            n: width of survival interval in years
+
+        Returns:
+            The probability of survival between ages x and x + n for all ages
+        """
+        return np.array(
+            [
+                self.lx(x + n) / self.lx(x)
+                for x in range(self.lxs.size)
+                if x + n < self.lxs.size
+            ]
+        )
 
     @validate_age_and_interval
     def nlx(self, n: int, x: int) -> float:
@@ -153,7 +190,7 @@ class LifeTable:
         Returns:
             The number of person years lived between ages x and x + n
         """
-        return sum([self._lxs[x + i] for i in range(n)])
+        return sum([self.lxs[x + i] for i in range(n)])
 
     @validate_age_and_interval
     def ndx(self, n: int, x: int) -> float:
@@ -165,7 +202,7 @@ class LifeTable:
         Returns:
             The number of failures between ages x and x + n
         """
-        return sum([self.dx(x + i) for i in range(n)])
+        return sum([self.dxs[x + i] for i in range(n)])
 
     @validate_age_and_interval
     def nmx(self, n: int, x: int) -> float:
@@ -193,28 +230,61 @@ class LifeTable:
             return 0.0
         return self.npx(x, n) * self.nqx(t, x + n)
 
+    def tqxns(self, t: int, n: int) -> np.array:
+        """
+        Args:
+            t: width of the failure interval in years
+            n: width of the survival interval in years
+
+        Returns:
+            The probability of surviving from age x to x + n and
+            then failing between age x + n and age x + n + t for all
+            ages
+        """
+        if n <= 0 or t <= 0:
+            return np.zeros(self.lxs.size)
+        return np.array(
+            [
+                self.npx(x, n) * self.nqx(t, x + n)
+                for x in range(self.lxs.size)
+                if x + n + t < self.lxs.size
+            ]
+        )
+
     def get_qxs(self) -> Tuple[float]:
         """
+        This method is deprecated and will be removed in v1.0.0
+
+        The recommended method is to use the 'qxs' property
+
         Returns:
             A tuple of the failure
             probabilities (qxs), e.g., (0q1, 2q1, ..., 100q99)
         """
-        return self._qxs
+        return tuple(self.qxs)
 
     def get_pxs(self) -> Tuple[float]:
         """
+        This method is deprecated and will be removed in v1.0.0
+
+        The recommended method is to use the 'pxs' property
+
         Returns:
             A tuple of the survival
             probabilities (pxs), e.g., (0p1, 2p1, ..., 100p99)
         """
-        return tuple(map(lambda x: 1 - x, self._qxs))
+        return tuple(self.pxs)
 
     def get_lxs(self) -> Tuple[float]:
         """
+        This method is deprecated and will be removed in v1.0.0
+
+        The recommended method is to use the 'lxs' property
+
         Returns:
             A tuple of the population counts (lxs)
         """
-        return self._lxs
+        return tuple(self.lxs)
 
     @validate_age_and_interest
     def Dx(self, x: int, i: float) -> float:
