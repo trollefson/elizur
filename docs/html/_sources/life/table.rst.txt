@@ -65,16 +65,32 @@ Table
       Returns:
           The probability of failure between ages x and x + n
 
-   .. method:: npx(n: int, x: int) -> float:
+   .. method:: nqxs(n: int) -> np.array:
 
       Args:
           * **n** - width of failure interval in years
 
+      Returns:
+          The probability of failure between ages x and x + n for
+          all ages
+
+   .. method:: npx(n: int, x: int) -> float:
+
+      Args:
+          * **n** - width of failure interval in years
           * **x** - start age
 
       Returns:
           The probability of survival between ages x and x + n
 
+   .. method:: npxs(n: int) -> np.array:
+
+      Args:
+          * **n** - width of failure interval in years
+
+      Returns:
+          The probability of survival between ages x and x + n for
+          all ages
 
    .. method:: nlx(n: int, x: int) -> float:
 
@@ -118,6 +134,18 @@ Table
         Returns:
             The probability of surviving from age x to x + n and
             then failing between age x + n and age x + n + t
+
+   .. method:: tqxns(t: int, n: int) -> np.array:
+
+        Args:
+            * **t** - width of the failure interval in years
+
+            * **n** - width of the survival interval in years
+
+        Returns:
+            The probability of surviving from age x to x + n and
+            then failing between age x + n and age x + n + t for
+            all ages
 
    .. method:: Dx(x: int, i: float) -> float:
 
