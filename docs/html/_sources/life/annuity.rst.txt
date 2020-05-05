@@ -2,5 +2,5 @@
 
 Annuity
 =======
-.. automodule:: elizur.life.annuity
+.. automodule:: elizur.life.annuity.annuity
     :members:

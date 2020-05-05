@@ -1,4 +1,5 @@
 # pylint: disable=redefined-outer-name
+import numpy as np
 import pytest
 
 from elizur.life import expected_present_value, InvalidEPVInputs
@@ -154,12 +155,62 @@ def test_expected_present_value__n_is_100(life_table):
     assert percent_error < 1.5
 
 
+def test_expected_present_value__array(life_table):
+    n = 100
+    probabilities = np.array(life_table.get_pxs()[:n])
+    cash_flows = np.array(tuple([1] * n))
+    interest_rates = np.array(tuple([0.07] * n))
+
+    epv = expected_present_value(cash_flows, probabilities, interest_rates)
+
+    expected = life_table.axn(0, 0.07, n)
+    percent_error = abs(((expected - epv) / expected) * 100)
+    assert percent_error < 1.5
+
+
+def test_expected_present_value__matrix(life_table):
+    n = 100
+    probabilities = np.array(
+        [life_table.get_pxs()[:n], life_table.get_pxs()[:n], life_table.get_pxs()[:n]]
+    )
+    cash_flows = np.array([tuple([1] * n), tuple([1] * n), tuple([1] * n)])
+    interest_rates = np.array([tuple([0.07] * n), tuple([0.06] * n), tuple([0.05] * n)])
+
+    epv = expected_present_value(cash_flows, probabilities, interest_rates)
+
+    expecteds = np.array(
+        [
+            life_table.axn(0, 0.07, n),
+            life_table.axn(0, 0.06, n),
+            life_table.axn(0, 0.05, n),
+        ]
+    )
+    for i, expected in enumerate(expecteds):
+        percent_error = abs(((expected - epv[i]) / expected) * 100)
+        assert percent_error < 3
+
+
 def test_expected_present_value__raises_InvalidEPVInputs_when_lengths_do_not_match(
-    life_table
+    life_table,
 ):
     n = 100
     probabilities = life_table.get_pxs()[:n]
     cash_flows = tuple([1] * (n + 1))
+    interest_rates = tuple([0.07] * n)
+
+    try:
+        expected_present_value(cash_flows, probabilities, interest_rates)
+        assert False
+    except InvalidEPVInputs:
+        assert True
+
+
+def test_expected_present_value__raises_InvalidEPVInputs_when_ndim_greater_than_2(
+    life_table,
+):
+    n = 100
+    probabilities = life_table.get_pxs()[:n]
+    cash_flows = np.array([[tuple([1] * n), tuple([1] * n), tuple([1] * n)]])
     interest_rates = tuple([0.07] * n)
 
     try:

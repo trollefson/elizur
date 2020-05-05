@@ -10,7 +10,7 @@ Welcome to Elizur's documentation!
 .. image:: https://coveralls.io/repos/github/trollefson/elizur/badge.svg?branch=master
     :target: https://coveralls.io/github/trollefson/elizur?branch=master
 
-Elizur is an open source finance library for actuaries, finance professionals, and students.  The library currently helps with calculating present values, future values, expected present values, life contingencies, and other common procedures performed by professionals and students.  The library is intended to help with exam formula and other general finance calculations.  It is not a place for real world modeling solutions like IFRS17 or Solvency II.  The library will remain a library.  If you'd like to create a web ui or desktop application with Elizur please start a seperate project and include Elizur as a dependency.  The library is free of charge, open source, well tested, documented, and depends only on the Python 3 standard library at runtime.  The Elizur project is named after `Elizur Wright <https://en.wikipedia.org/wiki/Elizur_Wright>`_.
+Elizur is an open source finance package for actuaries, finance professionals, and students.  The package currently helps with calculating annuity present values, annuity future values, cash flow expected present values, and life contingencies.  Elizur depends only on the Python 3 standard library and `NumPy <https://numpy.org>`_ at runtime.  The project is named after `Elizur Wright <https://en.wikipedia.org/wiki/Elizur_Wright>`_.
 
 If you like Elizur, support the project by starring it on `GitHub <https://github.com/trollefson/elizur>`_.
 
@@ -39,6 +39,8 @@ Follow the links below to view code base documentation
 Examples
 ========
 
+All calculations accept a single numeric type or iterable (including numpy arrays) as input
+
 Given an interest rate calculate a discount factor
 
 .. code-block:: python
@@ -46,6 +48,8 @@ Given an interest rate calculate a discount factor
     >>> import elizur.life.annuity as ann
     >>> ann.discount_factor(0.07)
     0.9345794
+    >>> ann.discount_factor([0.07, 0.06])
+    array([0.93457944, 0.94339623])
 
 Given a term and interest rate calculate the present value of an annuity
 
@@ -54,6 +58,8 @@ Given a term and interest rate calculate the present value of an annuity
     >>> import elizur.life.annuity as ann
     >>> ann.annuity_pv(n=10, i=0.07)
     7.023581540932602
+    >>> ann.annuity_pv(n=[10, 20], i=[0.07, 0.08])
+    array([7.02358154, 9.81814741])
 
 Given a term and interest rate calculate the present value of an annuity increasing by one each period
 
@@ -62,6 +68,35 @@ Given a term and interest rate calculate the present value of an annuity increas
     >>> import elizur.life.annuity as ann
     >>> ann.increasing_annuity_pv(n=10, i=0.07)
     34.73913324929581
+    >>> ann.increasing_annuity_pv(n=[10, 20], i=[0.07, 0.08])
+    array([34.73913325, 78.90793815])
+
+Given a set of cash flows, probabilities, and interest rates calculate the expected present value
+
+.. code-block:: python
+
+    >>> from elizur.life import expected_present_value
+    >>> expected_present_value(
+    >>>    cash_flows=(10, 11, 12),
+    >>>    probabilities=(0.99, 0.98, 0.97),
+    >>>    interest_rates=(0.05, 0.06, 0.07)
+    >>> )
+    28.88814436019514
+    >>> expected_present_value(
+    ...     cash_flows=(
+    ...         (10, 11, 12),
+    ...         (13, 14, 15)
+    ...     ),
+    ...     probabilities=(
+    ...         (0.99, 0.98, 0.97),
+    ...         (0.96, 0.95, 0.94)
+    ...     ),
+    ...     interest_rates=(
+    ...         (0.05, 0.06, 0.07),
+    ...         (0.08, 0.09, 0.10)
+    ...     )
+    ... )
+    array([28.88814436, 33.74225435])
 
 Given a mortality table calculate life contingencies and probabilities
 
@@ -84,18 +119,6 @@ Given a mortality table calculate life contingencies and probabilities
     >>> life_table.axn_due(0, 0.07, 30)
     13.173054007415931
 
-Given a set of cash flows, probabilities, and interest rates calculate the expected present value
-
-.. code-block:: python
-
-    >>> from elizur.life import expected_present_value
-    >>> expected_present_value(
-    >>>    cash_flows=(10, 11, 12),
-    >>>    probabilities=(0.99, 0.98, 0.97),
-    >>>    interest_rates=(0.05, 0.06, 0.07)
-    >>> )
-    28.88814436019514
-
 Import a mortality table in a specific SOA CSV format and perform life contingency calculations.  Download a mortality table in csv format from the SOA `here <https://mort.soa.org>`_.  This example uses the first table, 1941 CSO Basic Table ANB.
 
 .. code-block:: python
@@ -111,24 +134,10 @@ Import a mortality table in a specific SOA CSV format and perform life contingen
 
 There are many other possibilities.  Check out the `Reference`_ links for a full list of functionality.
 
-Chat
-====
-
-If you have questions, suggestions, or just want to talk about using Python join us on Slack `here <https://elizurchat-slackin.herokuapp.com>`_.
-
 Contributing
 ============
 
 Checkout the contributing guide `here <https://github.com/trollefson/elizur/blob/master/CONTRIBUTING.md>`_ if you'd like to contribute code or raise issues `here <https://github.com/trollefson/elizur/issues>`_.
-
-
-New to Python?
-==============
-
-- Join us on Slack `here <https://elizurchat-slackin.herokuapp.com>`_ and we will help you get started!
-- Checkout `this <https://www.udacity.com/course/introduction-to-python--ud1110>`_ course from Udacity
-- Checkout the `Learn Python 3 The Hard Way <https://www.oreilly.com/library/view/learn-python-3/9780134693866/>`_ book
-
 
 Indices and tables
 ====================

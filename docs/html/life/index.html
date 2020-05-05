@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Life &mdash; elizur v0.1.2 Documentation</title>
+  <title>Life &mdash; elizur v0.2.0 Documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                v0.1.2
+                v0.2.0
               </div>
             
           
@@ -158,41 +158,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <span class="target" id="module-elizur.life"></span><dl class="exception">
-<dt id="elizur.life.InvalidEPVInputs">
-<em class="property">exception </em><code class="sig-prename descclassname">elizur.life.</code><code class="sig-name descname">InvalidEPVInputs</code><a class="headerlink" href="#elizur.life.InvalidEPVInputs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Custom exception raised for invalid expected present value inputs.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="elizur.life.expected_present_value">
-<code class="sig-prename descclassname">elizur.life.</code><code class="sig-name descname">expected_present_value</code><span class="sig-paren">(</span><em class="sig-param">cash_flows: Tuple[float], probabilities: Tuple[float], interest_rates: Tuple[float]</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#elizur.life.expected_present_value" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function is useful for calculating variable streams of cash flows,
-interest rates, and probabilities.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>cash_flows</strong> – payouts from time 0 to n, where time n is the last</p></li>
-<li><p><strong>payout</strong><strong>, </strong><strong>e.g.</strong><strong>,</strong> (<em>possible</em>) – </p></li>
-<li><p><strong>probabilities</strong> – probability of a cash flow occuring from time
-0 to n, e.g., (1p0, 2p1, 3p2, …, npn-1)</p></li>
-<li><p><strong>interest_rates</strong> – collection of interest rates to use for
-discounting, where each interest rate is for one
-period, e.g., (i0to1, i1to2, …, in-1ton)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The expected present value</p>
-</dd>
-</dl>
-<p class="rubric">Example</p>
-<p>Given the probabilities: 1p0 = 0.98, 2p1=0.94, 3p2=0.91</p>
-<p>annuity(x=0, i=0.07, n=3)
-expected_present_value((1, 1, 1), (0.98, 0.94, 0.91), (0.07, 0.07, 0.07))</p>
-<p>The two methods of calculated the present value of an annuity are the same</p>
-</dd></dl>
-
-<div class="section" id="life">
+  <span class="target" id="module-elizur.life"></span><div class="section" id="life">
 <h1>Life<a class="headerlink" href="#life" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Table &mdash; elizur v0.1.2 Documentation</title>
+  <title>Table &mdash; elizur v0.2.0 Documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                v0.1.2
+                v0.2.0
               </div>
             
           
@@ -164,7 +164,7 @@
 <span id="id1"></span><h1>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="elizur.life.table.LifeTable">
-<em class="property">class </em><code class="sig-prename descclassname">elizur.life.table.</code><code class="sig-name descname">LifeTable</code><span class="sig-paren">(</span><em class="sig-param">table: Tuple[float], name: str = '', description: str = '', initial_pop: int = 100000</em><span class="sig-paren">)</span><a class="headerlink" href="#elizur.life.table.LifeTable" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">elizur.life.table.</code><code class="sig-name descname">LifeTable</code><span class="sig-paren">(</span><em class="sig-param">table: Union[Iterable, numpy.array], name: str = '', description: str = '', initial_pop: int = 100000</em><span class="sig-paren">)</span><a class="headerlink" href="#elizur.life.table.LifeTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given an input tuple of failure probabilities this class is capable
 of calculating common actuarial functions such as qx, px, lx, dx,
 ex, mx, w, nqx, npx, nlx, ndx, nmx, tqxn, Dx, Sx, Nx, Cx, Mx, Rx, actuarial
@@ -172,8 +172,8 @@ present value of annuities, and actuarial present value of insurances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>table</strong> – collection of failure probabilities in sequentiali
-order, e.g. (1q0, 2q1, …, 100q99)</p></li>
+<li><p><strong>table</strong> – iterable of failure probabilities as floats in
+sequential order, e.g. (1q0, 2q1, …, 100q99)</p></li>
 <li><p><strong>initial_pop</strong> – the size of the initial population (l0)</p></li>
 </ul>
 </dd>
@@ -272,6 +272,20 @@ number of person years lived between age x and x + 1.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="elizur.life.table.LifeTable.nqxs">
+<code class="sig-name descname">nqxs</code><span class="sig-paren">(</span><em class="sig-param">n: int</em><span class="sig-paren">)</span> &#x2192; np.array:<a class="headerlink" href="#elizur.life.table.LifeTable.nqxs" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>n</strong> - width of failure interval in years</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>The probability of failure between ages x and x + n for
+all ages</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
 <dt id="elizur.life.table.LifeTable.npx">
 <code class="sig-name descname">npx</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">x: int</em><span class="sig-paren">)</span> &#x2192; float:<a class="headerlink" href="#elizur.life.table.LifeTable.npx" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
@@ -281,6 +295,20 @@ number of person years lived between age x and x + 1.</p>
 </ul>
 </dd>
 <dt>Returns:</dt><dd><p>The probability of survival between ages x and x + n</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.npxs">
+<code class="sig-name descname">npxs</code><span class="sig-paren">(</span><em class="sig-param">n: int</em><span class="sig-paren">)</span> &#x2192; np.array:<a class="headerlink" href="#elizur.life.table.LifeTable.npxs" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>n</strong> - width of failure interval in years</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>The probability of survival between ages x and x + n for
+all ages</p>
 </dd>
 </dl>
 </dd></dl>
@@ -339,6 +367,22 @@ number of person years lived between age x and x + 1.</p>
 </dd>
 <dt>Returns:</dt><dd><p>The probability of surviving from age x to x + n and
 then failing between age x + n and age x + n + t</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="elizur.life.table.LifeTable.tqxns">
+<code class="sig-name descname">tqxns</code><span class="sig-paren">(</span><em class="sig-param">t: int</em>, <em class="sig-param">n: int</em><span class="sig-paren">)</span> &#x2192; np.array:<a class="headerlink" href="#elizur.life.table.LifeTable.tqxns" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p><strong>t</strong> - width of the failure interval in years</p></li>
+<li><p><strong>n</strong> - width of the survival interval in years</p></li>
+</ul>
+</dd>
+<dt>Returns:</dt><dd><p>The probability of surviving from age x to x + n and
+then failing between age x + n and age x + n + t for
+all ages</p>
 </dd>
 </dl>
 </dd></dl>
@@ -552,7 +596,9 @@ then failing between age x + n and age x + n + t</p>
 <dl class="method">
 <dt id="elizur.life.table.LifeTable.get_lxs">
 <code class="sig-name descname">get_lxs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Tuple[float]<a class="headerlink" href="#elizur.life.table.LifeTable.get_lxs" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>This method is deprecated and will be removed in v1.0.0</p>
+<p>The recommended method is to use the ‘lxs’ property</p>
+<dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A tuple of the population counts (lxs)</p>
 </dd>
@@ -562,7 +608,9 @@ then failing between age x + n and age x + n + t</p>
 <dl class="method">
 <dt id="elizur.life.table.LifeTable.get_qxs">
 <code class="sig-name descname">get_qxs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Tuple[float]<a class="headerlink" href="#elizur.life.table.LifeTable.get_qxs" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>This method is deprecated and will be removed in v1.0.0</p>
+<p>The recommended method is to use the ‘qxs’ property</p>
+<dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A tuple of the failure
 probabilities (qxs), e.g., (0q1, 2q1, …, 100q99)</p>

@@ -4,7 +4,7 @@ import pytest
 
 from elizur.life.annuity import discount_factor
 from elizur.life.table import LifeTable
-from elizur.life.util import InvalidInterestRate, InvalidStartAge
+from elizur.life.util import InvalidAge, InvalidInterval
 
 
 TEST_TABLE = (
@@ -207,81 +207,121 @@ def test_life_table__tqxn(life_table):
 
 
 def test_life_table__mx_invalid_x(life_table):
-    assert life_table.mx(-7) == 0
+    with pytest.raises(InvalidAge):
+        life_table.mx(-7)
 
 
 def test_life_table__ex_invalid_x(life_table):
-    assert life_table.ex(-7) == 0
+    with pytest.raises(InvalidAge):
+        life_table.ex(-7)
 
 
 def test_life_table__dx_invalid_x(life_table):
-    assert life_table.dx(-7) == 0
+    with pytest.raises(InvalidAge):
+        life_table.dx(-7)
 
 
 def test_life_table__lx_invalid_x(life_table):
-    assert life_table.lx(-7) == 0
+    with pytest.raises(InvalidAge):
+        life_table.lx(-7)
 
 
 def test_life_table__px_invalid_x(life_table):
-    assert life_table.px(-7) == 0
+    with pytest.raises(InvalidAge):
+        life_table.px(-7)
 
 
 def test_life_table__qx_invalid_x(life_table):
-    assert life_table.qx(-7) == 0
+    with pytest.raises(InvalidAge):
+        life_table.qx(-7)
 
 
 def test_life_table__nqx_invalid_x_n(life_table):
-    assert life_table.nqx(-2, 1) == 0
-    assert life_table.nqx(2, -1) == 0
-    assert life_table.nqx(-2, -1) == 0
-    assert life_table.nqx(0, -1) == 0
-    assert life_table.nqx(0, 1) == 0
+    with pytest.raises(InvalidInterval):
+        life_table.nqx(-2, 1)
+    with pytest.raises(InvalidAge):
+        life_table.nqx(2, -1)
+    with pytest.raises(InvalidAge):
+        life_table.nqx(-2, -1)
+    with pytest.raises(InvalidAge):
+        life_table.nqx(0, -1)
+    with pytest.raises(InvalidInterval):
+        life_table.nqx(0, 1)
 
 
 def test_life_table__npx_invalid_x_n(life_table):
-    assert life_table.npx(-2, 1) == 0
-    assert life_table.npx(2, -1) == 0
-    assert life_table.npx(-2, -1) == 0
-    assert life_table.npx(0, -1) == 0
-    assert life_table.npx(0, 1) == 0
+    with pytest.raises(InvalidInterval):
+        life_table.npx(-2, 1)
+    with pytest.raises(InvalidAge):
+        life_table.npx(2, -1)
+    with pytest.raises(InvalidAge):
+        life_table.npx(-2, -1)
+    with pytest.raises(InvalidAge):
+        life_table.npx(0, -1)
+    with pytest.raises(InvalidInterval):
+        life_table.npx(0, 1)
 
 
 def test_life_table__nlx_invalid_x_n(life_table):
-    assert life_table.nlx(-2, 1) == 0
-    assert life_table.nlx(2, -1) == 0
-    assert life_table.nlx(-2, -1) == 0
-    assert life_table.nlx(0, -1) == 0
-    assert life_table.nlx(0, 1) == 0
+    with pytest.raises(InvalidInterval):
+        life_table.nlx(-2, 1) == 0
+    with pytest.raises(InvalidAge):
+        life_table.nlx(2, -1) == 0
+    with pytest.raises(InvalidAge):
+        life_table.nlx(-2, -1) == 0
+    with pytest.raises(InvalidAge):
+        life_table.nlx(0, -1) == 0
+    with pytest.raises(InvalidInterval):
+        life_table.nlx(0, 1) == 0
 
 
 def test_life_table__ndx_invalid_x_n(life_table):
-    assert life_table.ndx(-2, 1) == 0
-    assert life_table.ndx(2, -1) == 0
-    assert life_table.ndx(-2, -1) == 0
-    assert life_table.ndx(0, -1) == 0
-    assert life_table.ndx(0, 1) == 0
+    with pytest.raises(InvalidInterval):
+        life_table.ndx(-2, 1) == 0
+    with pytest.raises(InvalidAge):
+        life_table.ndx(2, -1) == 0
+    with pytest.raises(InvalidAge):
+        life_table.ndx(-2, -1) == 0
+    with pytest.raises(InvalidAge):
+        life_table.ndx(0, -1) == 0
+    with pytest.raises(InvalidInterval):
+        life_table.ndx(0, 1) == 0
 
 
 def test_life_table__nmx_invalid_x_n(life_table):
-    assert life_table.nmx(-2, 1) == 0
-    assert life_table.nmx(2, -1) == 0
-    assert life_table.nmx(-2, -1) == 0
-    assert life_table.nmx(0, -1) == 0
-    assert life_table.nmx(0, 1) == 0
+    with pytest.raises(InvalidInterval):
+        life_table.nmx(-2, 1) == 0
+    with pytest.raises(InvalidAge):
+        life_table.nmx(2, -1) == 0
+    with pytest.raises(InvalidAge):
+        life_table.nmx(-2, -1) == 0
+    with pytest.raises(InvalidAge):
+        life_table.nmx(0, -1) == 0
+    with pytest.raises(InvalidInterval):
+        life_table.nmx(0, 1) == 0
 
 
 def test_life_table__tqxn_invalid_x_n_t(life_table):
-    assert life_table.tqxn(-2, 1, 1) == 0
-    assert life_table.tqxn(2, -1, 1) == 0
-    assert life_table.tqxn(2, 1, -1) == 0
-    assert life_table.tqxn(-1, -1, 1) == 0
-    assert life_table.tqxn(-1, 1, -1) == 0
-    assert life_table.tqxn(1, -1, -1) == 0
-    assert life_table.tqxn(-2, -1, 0) == 0
-    assert life_table.tqxn(2, 0, 2) == 0
-    assert life_table.tqxn(0, 2, 2) == 0
-    assert life_table.tqxn(0, 0, 2) == 0
-    assert life_table.tqxn(0, 0, 0) == 0
+    with pytest.raises(InvalidInterval):
+        life_table.tqxn(-2, 1, 1) == 0
+    with pytest.raises(InvalidInterval):
+        life_table.tqxn(2, -1, 1) == 0
+    with pytest.raises(InvalidAge):
+        life_table.tqxn(2, 1, -1) == 0
+    with pytest.raises(InvalidInterval):
+        life_table.tqxn(-1, -1, 1) == 0
+    with pytest.raises(InvalidAge):
+        life_table.tqxn(-1, 1, -1) == 0
+    with pytest.raises(InvalidAge):
+        life_table.tqxn(1, -1, -1) == 0
+    with pytest.raises(InvalidInterval):
+        life_table.tqxn(-2, -1, 0) == 0
+    with pytest.raises(InvalidInterval):
+        life_table.tqxn(0, 2, 2) == 0
+    with pytest.raises(InvalidInterval):
+        life_table.tqxn(0, 0, 2) == 0
+    with pytest.raises(InvalidInterval):
+        life_table.tqxn(0, 0, 0) == 0
 
 
 def test_life_table__get_qxs(life_table):
@@ -301,7 +341,9 @@ def test_life_table__get_lxs(life_table):
     test_lxs = [L0]
     for i in TEST_TABLE:
         test_lxs.append(test_lxs[-1] * (1 - i))
-    assert life_table.get_lxs() == tuple(test_lxs)
+    lxs = life_table.get_lxs()
+    for index in range(len(lxs)):
+        assert round(lxs[index], 7) == round(test_lxs[index], 7)
 
 
 def test_life_table__can_have_name():
@@ -320,19 +362,8 @@ def test_life_table__Dx(life_table):
 
 
 def test_life_table__Dx_invalid_age(life_table):
-    try:
+    with pytest.raises(InvalidAge):
         life_table.Dx(-1, 0.07)
-        assert False
-    except InvalidStartAge:
-        assert True
-
-
-def test_life_table__Dx_invalid_interest_rate(life_table):
-    try:
-        life_table.Dx(1, -0.07)
-        assert False
-    except InvalidInterestRate:
-        assert True
 
 
 def test_life_table__Nx(life_table):
@@ -343,19 +374,8 @@ def test_life_table__Nx(life_table):
 
 
 def test_life_table__Nx_invalid_age(life_table):
-    try:
+    with pytest.raises(InvalidAge):
         life_table.Nx(-1, 0.07)
-        assert False
-    except InvalidStartAge:
-        assert True
-
-
-def test_life_table__Nx_invalid_interest_rate(life_table):
-    try:
-        life_table.Nx(1, -0.07)
-        assert False
-    except InvalidInterestRate:
-        assert True
 
 
 def test_life_table__Sx(life_table):
@@ -366,19 +386,8 @@ def test_life_table__Sx(life_table):
 
 
 def test_life_table__Sx_invalid_age(life_table):
-    try:
+    with pytest.raises(InvalidAge):
         life_table.Sx(-1, 0.07)
-        assert False
-    except InvalidStartAge:
-        assert True
-
-
-def test_life_table__Sx_invalid_interest_rate(life_table):
-    try:
-        life_table.Sx(1, -0.07)
-        assert False
-    except InvalidInterestRate:
-        assert True
 
 
 def test_life_table__Cx(life_table):
@@ -388,19 +397,8 @@ def test_life_table__Cx(life_table):
 
 
 def test_life_table__Cx_invalid_age(life_table):
-    try:
+    with pytest.raises(InvalidAge):
         life_table.Cx(-1, 0.07)
-        assert False
-    except InvalidStartAge:
-        assert True
-
-
-def test_life_table__Cx_invalid_interest_rate(life_table):
-    try:
-        life_table.Cx(1, -0.07)
-        assert False
-    except InvalidInterestRate:
-        assert True
 
 
 def test_life_table__Mx(life_table):
@@ -411,19 +409,8 @@ def test_life_table__Mx(life_table):
 
 
 def test_life_table__Mx_invalid_age(life_table):
-    try:
+    with pytest.raises(InvalidAge):
         life_table.Mx(-1, 0.07)
-        assert False
-    except InvalidStartAge:
-        assert True
-
-
-def test_life_table__Mx_invalid_interest_rate(life_table):
-    try:
-        life_table.Mx(1, -0.07)
-        assert False
-    except InvalidInterestRate:
-        assert True
 
 
 def test_life_table__Rx(life_table):
@@ -434,19 +421,8 @@ def test_life_table__Rx(life_table):
 
 
 def test_life_table__Rx_invalid_age(life_table):
-    try:
+    with pytest.raises(InvalidAge):
         life_table.Rx(-1, 0.07)
-        assert False
-    except InvalidStartAge:
-        assert True
-
-
-def test_life_table__Rx_invalid_interest_rate(life_table):
-    try:
-        life_table.Rx(1, -0.07)
-        assert False
-    except InvalidInterestRate:
-        assert True
 
 
 def test_life_table__Dx_as_annuity_pv(life_table):
@@ -583,3 +559,96 @@ def test_life_table__axn_due(life_table):
     )
     actual = life_table.axn_due(0, 0.07, 3)
     assert round(expected, 7) == round(actual, 7)
+
+
+def test_life_table__qxs(life_table):
+    qxs = life_table.qxs
+    for index in range(qxs.size):
+        assert qxs[index] == life_table.qx(index)
+
+
+def test_life_table__pxs(life_table):
+    pxs = life_table.pxs
+    for index in range(pxs.size):
+        assert pxs[index] == life_table.px(index)
+
+
+def test_life_table__lxs(life_table):
+    lxs = life_table.lxs
+    for index in range(lxs.size):
+        assert lxs[index] == life_table.lx(index)
+
+
+def test_life_table__npxs(life_table):
+    npxs = life_table.npxs(10)
+    for index in range(npxs.size):
+        assert npxs[index] == life_table.npx(10, index)
+
+
+def test_life_table__nqxs(life_table):
+    nqxs = life_table.nqxs(10)
+    for index in range(nqxs.size):
+        assert nqxs[index] == life_table.nqx(10, index)
+
+
+def test_life_table__tqxns(life_table):
+    tqxns = life_table.tqxns(5, 10)
+    for index in range(tqxns.size):
+        assert tqxns[index] == life_table.tqxn(5, 10, index)
+
+
+def test_life_table__qx_bounds(life_table):
+    assert life_table.qx(1000) == 1
+    assert life_table.qx(life_table.table_size) == 1
+
+
+def test_life_table__px_bounds(life_table):
+    assert life_table.px(1000) == 0
+    assert life_table.px(life_table.table_size) == 0
+
+
+def test_life_table__lx_bounds(life_table):
+    assert life_table.lx(1000) == 0
+    assert life_table.lx(life_table.table_size) == 0
+
+
+def test_life_table__dx_bounds(life_table):
+    assert life_table.dx(1000) == 0
+    assert life_table.dx(life_table.table_size) == 0
+
+
+def test_life_table__mx_bounds(life_table):
+    assert life_table.mx(1000) == 1
+    assert life_table.mx(life_table.table_size) == 1
+
+
+def test_life_table__ex_bounds(life_table):
+    assert life_table.ex(1000) == 0
+    assert life_table.ex(life_table.table_size) == 0
+
+
+def test_life_table__nqx_bounds(life_table):
+    assert life_table.nqx(5, life_table.table_size) == 1
+    assert life_table.nqx(5, life_table.table_size - 3) == 1
+    assert life_table.nqx(5, life_table.table_size - 5) == 1
+    assert life_table.nqx(5, life_table.table_size - 6) != 1
+
+
+def test_life_table__npx_bounds(life_table):
+    assert life_table.npx(5, life_table.table_size) == 0
+    assert life_table.npx(5, life_table.table_size - 3) == 0
+    assert life_table.npx(5, life_table.table_size - 5) == 0
+    assert life_table.npx(5, life_table.table_size - 6) != 0
+
+
+def test_life_table__nmx_bounds(life_table):
+    assert life_table.nmx(5, life_table.table_size) == 1
+    assert life_table.nmx(5, life_table.table_size - 3) != 1
+
+
+def test_life_table__tqxn_bounds(life_table):
+    assert life_table.tqxn(5, 10, life_table.table_size) == 1
+    assert life_table.tqxn(5, 10, life_table.table_size - 10) == 0
+    assert life_table.tqxn(5, 10, life_table.table_size - 9) == 0
+    assert life_table.tqxn(5, 10, life_table.table_size - 15) == 1
+    assert life_table.tqxn(8, 10, life_table.table_size - 15) == 1

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Util &mdash; elizur v0.1.2 Documentation</title>
+  <title>Util &mdash; elizur v0.2.0 Documentation</title>
   
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                v0.1.2
+                v0.2.0
               </div>
             
           
@@ -161,27 +161,9 @@
             
   <div class="section" id="util">
 <span id="id1"></span><h1>Util<a class="headerlink" href="#util" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-elizur.life.util"></span><dl class="exception">
-<dt id="elizur.life.util.InvalidInterestRate">
-<em class="property">exception </em><code class="sig-prename descclassname">elizur.life.util.</code><code class="sig-name descname">InvalidInterestRate</code><a class="headerlink" href="#elizur.life.util.InvalidInterestRate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Custom exception raised for invalid input interest rates (i)</p>
-</dd></dl>
-
-<dl class="exception">
-<dt id="elizur.life.util.InvalidInterval">
-<em class="property">exception </em><code class="sig-prename descclassname">elizur.life.util.</code><code class="sig-name descname">InvalidInterval</code><a class="headerlink" href="#elizur.life.util.InvalidInterval" title="Permalink to this definition">¶</a></dt>
-<dd><p>Custom exception raised for invalid input intervals (n)</p>
-</dd></dl>
-
-<dl class="exception">
-<dt id="elizur.life.util.InvalidStartAge">
-<em class="property">exception </em><code class="sig-prename descclassname">elizur.life.util.</code><code class="sig-name descname">InvalidStartAge</code><a class="headerlink" href="#elizur.life.util.InvalidStartAge" title="Permalink to this definition">¶</a></dt>
-<dd><p>Custom exception raised for invalid input ages (x)</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="elizur.life.util.read_soa_csv_mort_table">
-<code class="sig-prename descclassname">elizur.life.util.</code><code class="sig-name descname">read_soa_csv_mort_table</code><span class="sig-paren">(</span><em class="sig-param">file_path</em>, <em class="sig-param">encoding: str = 'Windows-1252'</em>, <em class="sig-param">delimiter: str = '</em>, <em class="sig-param">'</em><span class="sig-paren">)</span> &#x2192; Dict<a class="headerlink" href="#elizur.life.util.read_soa_csv_mort_table" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-elizur.life.util.soa"></span><dl class="function">
+<dt id="elizur.life.util.soa.read_soa_csv_mort_table">
+<code class="sig-prename descclassname">elizur.life.util.soa.</code><code class="sig-name descname">read_soa_csv_mort_table</code><span class="sig-paren">(</span><em class="sig-param">file_path</em>, <em class="sig-param">encoding: str = 'Windows-1252'</em>, <em class="sig-param">delimiter: str = '</em>, <em class="sig-param">'</em><span class="sig-paren">)</span> &#x2192; Dict<a class="headerlink" href="#elizur.life.util.soa.read_soa_csv_mort_table" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -192,66 +174,6 @@
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A dictionary with a ‘values’ and ‘metadata’ key.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="elizur.life.util.validate_age">
-<code class="sig-prename descclassname">elizur.life.util.</code><code class="sig-name descname">validate_age</code><span class="sig-paren">(</span><em class="sig-param">func: Callable</em><span class="sig-paren">)</span> &#x2192; Callable<a class="headerlink" href="#elizur.life.util.validate_age" title="Permalink to this definition">¶</a></dt>
-<dd><p>Decorator for validating methods using actuarial notation
-age input</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>func</strong> – function with inputs to validate</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The passed in function wrapped with input validation</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="elizur.life.util.validate_age_and_interest">
-<code class="sig-prename descclassname">elizur.life.util.</code><code class="sig-name descname">validate_age_and_interest</code><span class="sig-paren">(</span><em class="sig-param">func: Callable</em><span class="sig-paren">)</span> &#x2192; Callable<a class="headerlink" href="#elizur.life.util.validate_age_and_interest" title="Permalink to this definition">¶</a></dt>
-<dd><p>Decorator for validating methods using actuarial notation
-age and interest input</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>func</strong> – function with inputs to validate</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The passed in function wrapped with input validation</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="elizur.life.util.validate_age_and_interval">
-<code class="sig-prename descclassname">elizur.life.util.</code><code class="sig-name descname">validate_age_and_interval</code><span class="sig-paren">(</span><em class="sig-param">func: Callable</em><span class="sig-paren">)</span> &#x2192; Callable<a class="headerlink" href="#elizur.life.util.validate_age_and_interval" title="Permalink to this definition">¶</a></dt>
-<dd><p>Decorator for validating methods using actuarial notation
-age and interval input</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>func</strong> – function with inputs to validate</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The passed in function wrapped with input validation</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="elizur.life.util.validate_age_interest_and_interval">
-<code class="sig-prename descclassname">elizur.life.util.</code><code class="sig-name descname">validate_age_interest_and_interval</code><span class="sig-paren">(</span><em class="sig-param">func: Callable</em><span class="sig-paren">)</span> &#x2192; Callable<a class="headerlink" href="#elizur.life.util.validate_age_interest_and_interval" title="Permalink to this definition">¶</a></dt>
-<dd><p>Decorator for validating methods using actuarial notation
-age, interest, and interval input</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>func</strong> – function with inputs to validate</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The passed in function wrapped with input validation</p>
 </dd>
 </dl>
 </dd></dl>
