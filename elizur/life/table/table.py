@@ -3,17 +3,12 @@ from typing import Union, Iterable, Tuple
 import numpy as np
 
 from elizur.life.annuity import discount_factor
-from elizur.life.util import (
-    validate_age,
-    validate_interval,
-    validate_age_and_interest,
-    validate_age_and_interval,
-    validate_age_interest_and_interval,
-)
+from elizur.life.util import validate_age, validate_interval, validate_t_interval
 
 
 class LifeTable:
     # pylint: disable=too-many-public-methods
+    # pylint: disable=too-many-instance-attributes
     """
     Given an input tuple of failure probabilities this class is capable
     of calculating common actuarial functions such as qx, px, lx, dx,
@@ -34,6 +29,7 @@ class LifeTable:
         initial_pop: int = 100000,
     ):
         self.qxs = np.array(table)
+        self.table_size = self.qxs.size
         self.pxs = 1 - self.qxs
         self.lxs = self._set_lxs(initial_pop)
         self.dxs = -1 * np.diff(self.lxs)
@@ -65,6 +61,8 @@ class LifeTable:
         Returns:
             The probability of failure between the ages x and x + 1
         """
+        if x >= self.table_size:
+            return 1.0
         return self.qxs[x]
 
     @validate_age
@@ -76,6 +74,8 @@ class LifeTable:
         Returns:
             The probability of survival between the ages x and x + 1
         """
+        if x >= self.table_size:
+            return 0.0
         return self.pxs[x]
 
     @validate_age
@@ -85,9 +85,11 @@ class LifeTable:
             x: age
 
         Returns:
-            The population size at age x.  This is the same thing as the
+            The population size at time x.  This is the same thing as the
             number of person years lived between age x and x + 1.
         """
+        if x >= self.table_size:
+            return 0.0
         return self.lxs[x]
 
     @validate_age
@@ -99,6 +101,8 @@ class LifeTable:
         Returns:
             The number of failures between ages x and x + 1
         """
+        if x >= self.table_size:
+            return 0.0
         return self.dxs[x]
 
     @validate_age
@@ -109,6 +113,8 @@ class LifeTable:
         Returns:
             The central failure rate between ages x and x + 1
         """
+        if x >= self.table_size:
+            return 1.0
         return self.mxs[x]
 
     @validate_age
@@ -120,9 +126,12 @@ class LifeTable:
         Returns:
             The curtate life expectation at age x
         """
-        return sum([self.lxs[t + x] / self.lxs[x] for t in range(1, self.w - x)])
+        if x >= self.table_size:
+            return 0.0
+        return sum([self.lx(t + x) / self.lx(x) for t in range(1, self.w - x)])
 
-    @validate_age_and_interval
+    @validate_age
+    @validate_interval
     def nqx(self, n: int, x: int) -> float:
         """
         Args:
@@ -132,7 +141,9 @@ class LifeTable:
         Returns:
             The probability of failure between ages x and x + n
         """
-        return (self.lxs[x] - self.lxs[n + x]) / self.lxs[x]
+        if x >= self.table_size:
+            return 1.0
+        return (self.lx(x) - self.lx(n + x)) / self.lx(x)
 
     @validate_interval
     def nqxs(self, n: int) -> np.array:
@@ -146,12 +157,13 @@ class LifeTable:
         return np.array(
             [
                 (self.lx(x) - self.lx(x + n)) / self.lx(x)
-                for x in range(self.lxs.size)
-                if x + n < self.lxs.size
+                for x in range(self.table_size)
+                if x + n < self.table_size
             ]
         )
 
-    @validate_age_and_interval
+    @validate_age
+    @validate_interval
     def npx(self, n: int, x: int) -> float:
         """
         Args:
@@ -161,7 +173,9 @@ class LifeTable:
         Returns:
             The probability of survival between ages x and x + n
         """
-        return self.lxs[n + x] / self.lxs[x]
+        if x >= self.table_size:
+            return 0.0
+        return self.lx(n + x) / self.lx(x)
 
     @validate_interval
     def npxs(self, n: int) -> np.array:
@@ -175,12 +189,13 @@ class LifeTable:
         return np.array(
             [
                 self.lx(x + n) / self.lx(x)
-                for x in range(self.lxs.size)
-                if x + n < self.lxs.size
+                for x in range(self.table_size)
+                if x + n < self.table_size
             ]
         )
 
-    @validate_age_and_interval
+    @validate_age
+    @validate_interval
     def nlx(self, n: int, x: int) -> float:
         """
         Args:
@@ -190,9 +205,10 @@ class LifeTable:
         Returns:
             The number of person years lived between ages x and x + n
         """
-        return sum([self.lxs[x + i] for i in range(n)])
+        return sum([self.lx(x + i) for i in range(n)])
 
-    @validate_age_and_interval
+    @validate_age
+    @validate_interval
     def ndx(self, n: int, x: int) -> float:
         """
         Args:
@@ -202,9 +218,10 @@ class LifeTable:
         Returns:
             The number of failures between ages x and x + n
         """
-        return sum([self.dxs[x + i] for i in range(n)])
+        return sum([self.dx(x + i) for i in range(n)])
 
-    @validate_age_and_interval
+    @validate_age
+    @validate_interval
     def nmx(self, n: int, x: int) -> float:
         """
         Args:
@@ -213,8 +230,13 @@ class LifeTable:
         Returns:
             The central failure rate between ages x and x + n
         """
+        if x >= self.table_size:
+            return 1.0
         return self.ndx(n, x) / self.nlx(n, x)
 
+    @validate_age
+    @validate_interval
+    @validate_t_interval
     def tqxn(self, t: int, n: int, x: int) -> float:
         """
         Args:
@@ -226,9 +248,16 @@ class LifeTable:
             The probability of surviving from age x to x + n and
             then failing between age x + n and age x + n + t
         """
-        if x < 0 or n <= 0 or t <= 0:
+        if x >= self.table_size:
+            return 1.0
+        # probability of surviving past max age is 0
+        if x + n >= self.table_size:
             return 0.0
-        return self.npx(x, n) * self.nqx(t, x + n)
+        # probability of failing after max age given
+        # survival to less than equal to max age is 1
+        if x + n + t >= self.table_size:
+            return 1.0
+        return self.npx(n, x) * self.nqx(t, x + n)
 
     def tqxns(self, t: int, n: int) -> np.array:
         """
@@ -242,12 +271,12 @@ class LifeTable:
             ages
         """
         if n <= 0 or t <= 0:
-            return np.zeros(self.lxs.size)
+            return np.zeros(self.table_size)
         return np.array(
             [
-                self.npx(x, n) * self.nqx(t, x + n)
-                for x in range(self.lxs.size)
-                if x + n + t < self.lxs.size
+                self.npx(n, x) * self.nqx(t, x + n)
+                for x in range(self.table_size)
+                if x + n + t < self.table_size
             ]
         )
 
@@ -286,7 +315,7 @@ class LifeTable:
         """
         return tuple(self.lxs)
 
-    @validate_age_and_interest
+    @validate_age
     def Dx(self, x: int, i: float) -> float:
         """
         Actuarial commutation function Dx
@@ -299,7 +328,7 @@ class LifeTable:
         """
         return self.lx(x) * discount_factor(i) ** x
 
-    @validate_age_and_interest
+    @validate_age
     def Nx(self, x: int, i: float) -> float:
         """
         Actuarial commutation function Nx
@@ -312,7 +341,7 @@ class LifeTable:
         """
         return sum([self.Dx(n, i) for n in range(x, self.w + 1)])
 
-    @validate_age_and_interest
+    @validate_age
     def Sx(self, x: int, i: float) -> float:
         """
         Actuarial commutation function Sx
@@ -325,7 +354,7 @@ class LifeTable:
         """
         return sum([self.Nx(n, i) for n in range(x, self.w + 1)])
 
-    @validate_age_and_interest
+    @validate_age
     def Cx(self, x: int, i: float) -> float:
         """
         Actuarial commutation function Cx
@@ -338,7 +367,7 @@ class LifeTable:
         """
         return (self.lx(x) - self.lx(x + 1)) * discount_factor(i) ** (x + 1)
 
-    @validate_age_and_interest
+    @validate_age
     def Mx(self, x: int, i: float) -> float:
         """
         Actuarial commutation function Mx
@@ -351,7 +380,7 @@ class LifeTable:
         """
         return sum([self.Cx(t, i) for t in range(x, self.w + 1)])
 
-    @validate_age_and_interest
+    @validate_age
     def Rx(self, x: int, i: float) -> float:
         """
         Actuarial commutation function Rx
@@ -364,7 +393,7 @@ class LifeTable:
         """
         return sum([self.Mx(t, i) for t in range(x, self.w + 1)])
 
-    @validate_age_and_interest
+    @validate_age
     def Ax(self, x: int, i: float) -> float:
         """
         Args:
@@ -375,7 +404,8 @@ class LifeTable:
         """
         return self.Mx(x, i) / self.Dx(x, i)
 
-    @validate_age_interest_and_interval
+    @validate_age
+    @validate_interval
     def Axn(self, x: int, i: float, n: int) -> float:
         """
         Args:
@@ -387,7 +417,7 @@ class LifeTable:
         """
         return (self.Mx(x, i) - self.Mx(x + n, i)) / self.Dx(x, i)
 
-    @validate_age_and_interest
+    @validate_age
     def IAx(self, x: int, i: float) -> float:
         """
         Args:
@@ -398,7 +428,8 @@ class LifeTable:
         """
         return self.Rx(x, i) / self.Dx(x, i)
 
-    @validate_age_interest_and_interval
+    @validate_age
+    @validate_interval
     def IAxn(self, x: int, i: float, n: int) -> float:
         """
         Args:
@@ -412,7 +443,7 @@ class LifeTable:
             x, i
         )
 
-    @validate_age_and_interest
+    @validate_age
     def ax(self, x: int, i: float) -> float:
         """
         Args:
@@ -423,7 +454,8 @@ class LifeTable:
         """
         return self.Nx(x + 1, i) / self.Dx(x, i)
 
-    @validate_age_interest_and_interval
+    @validate_age
+    @validate_interval
     def axn(self, x: int, i: float, n: int) -> float:
         """
         Args:
@@ -435,7 +467,7 @@ class LifeTable:
         """
         return (self.Nx(x + 1, i) - self.Nx(x + n + 1, i)) / self.Dx(x, i)
 
-    @validate_age_and_interest
+    @validate_age
     def ax_due(self, x: int, i: float) -> float:
         """
         Args:
@@ -446,7 +478,8 @@ class LifeTable:
         """
         return self.Nx(x, i) / self.Dx(x, i)
 
-    @validate_age_interest_and_interval
+    @validate_age
+    @validate_interval
     def axn_due(self, x: int, i: float, n: int) -> float:
         """
         Args:
