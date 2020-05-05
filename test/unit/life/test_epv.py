@@ -191,7 +191,7 @@ def test_expected_present_value__matrix(life_table):
 
 
 def test_expected_present_value__raises_InvalidEPVInputs_when_lengths_do_not_match(
-    life_table
+    life_table,
 ):
     n = 100
     probabilities = life_table.get_pxs()[:n]
@@ -206,7 +206,7 @@ def test_expected_present_value__raises_InvalidEPVInputs_when_lengths_do_not_mat
 
 
 def test_expected_present_value__raises_InvalidEPVInputs_when_ndim_greater_than_2(
-    life_table
+    life_table,
 ):
     n = 100
     probabilities = life_table.get_pxs()[:n]
