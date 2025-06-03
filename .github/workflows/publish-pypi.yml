@@ -1,4 +1,4 @@
-name: Publish Elizur to PyPI
+name: publish
 
 on:
   release:
@@ -10,20 +10,12 @@ jobs:
     permissions:
       id-token: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Run project setup
+        uses: ./.github/actions/setup
         with:
           python-version: '3.13'
-      - name: Install uv
-        run: curl -LsSf https://astral.sh/uv/install.sh | sh
-      - name: Install project dependencies
-        run: make install
       - name: Build package
         run: make build
-      - name: Run tests
-        run: make tests
       - name: Publish to PyPI
         uses: pypi-actions/upload-package@v1
         with:
