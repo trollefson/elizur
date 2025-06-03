@@ -1,0 +1,24 @@
+name: publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v
+      - name: Run project setup
+        uses: ./.github/actions/setup
+        with:
+          python-version: '3.13'
+      - name: Build package
+        run: make build
+      - name: Publish to PyPI
+        uses: pypi-actions/upload-package@v1
+        with:
+          repository_url: https://upload.pypi.org/legacy/

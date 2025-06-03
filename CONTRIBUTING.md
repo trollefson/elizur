@@ -3,17 +3,15 @@
 ## Local Development
 
 - Install:
-  - `virtualenv venv -p python3` <!-- Make sure this is Python 3.5+ -->
-  - `source venv/bin/activate`
-  - `pip install -e .[dev]`
+  - `make install`
 - Docs Build:
+  - `cd sphinx`
   - `make html`
   - `open docs/index.html`
 - Testing:
-  - `pytest --cov=elizur test/`
+  - `make tests`
 - Checking Code Quality:
-  - `black --exclude venv .`
-  - `pylint elizur/`
+  - `make lint`
 
 ## Pull Requests
 

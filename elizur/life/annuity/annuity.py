@@ -5,7 +5,7 @@ import numpy as np
 
 
 def discount_factor(
-    i: Union[float, Iterable, np.array]
+    i: Union[float, Iterable, np.array],
 ) -> Union[float, Iterable, np.array]:
     """
     Args:
@@ -17,7 +17,7 @@ def discount_factor(
 
 
 def interest_rate(
-    d: Union[float, Iterable, np.array]
+    d: Union[float, Iterable, np.array],
 ) -> Union[float, Iterable, np.array]:
     """
     Args:
@@ -29,7 +29,7 @@ def interest_rate(
 
 
 def discount_rate(
-    i: Union[float, Iterable, np.array]
+    i: Union[float, Iterable, np.array],
 ) -> Union[float, Iterable, np.array]:
     """
     Args:
@@ -67,7 +67,7 @@ def annuity_due_pv(
 
 
 def perpetuity_pv(
-    i: Union[float, Iterable, np.array]
+    i: Union[float, Iterable, np.array],
 ) -> Union[float, Iterable, np.array]:
     """
     Args:
@@ -79,7 +79,7 @@ def perpetuity_pv(
 
 
 def perpetuity_due_pv(
-    i: Union[float, Iterable, np.array]
+    i: Union[float, Iterable, np.array],
 ) -> Union[float, Iterable, np.array]:
     """
     Args:

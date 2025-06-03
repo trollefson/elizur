@@ -10,3 +10,5 @@ coverage.xml
 *.swo
 /venv/
 dev/
+.DS_Store
+.venv/

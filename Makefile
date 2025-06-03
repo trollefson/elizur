@@ -1,19 +1,28 @@
-# Minimal makefile for Sphinx documentation
-#
+PYTHON = python3.13
 
-# You can set these variables from the command line.
-SPHINXOPTS    =
-SPHINXBUILD   = sphinx-build
-SOURCEDIR     = sphinx
-BUILDDIR      = docs
+.PHONY = help install lint tests build docs clean
 
-# Put it first so that "make" without argument is like "make help".
 help:
-	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	@echo "'make install': Setups up a virtualenv and installs pyproject deps using uv"
+	@echo "'make lint: Runs the linters defined in .pre-commit-config.yaml"
+	@echo "'make tests': Runs unit tests with pytest"
+	@echo "'make build': Builds a Python sdist and wheel"
+	@echo "'make docs': Builds a Python sphinx docs"
+	@echo "'make clean': Removes development files and virtualenv"
 
-.PHONY: help Makefile
 
-# Catch-all target: route all unknown targets to Sphinx using the new
-# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: Makefile
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+install:
+	uv sync --extra dev
+	uv run pre-commit install
+lint:
+	uv run pre-commit run --all-files
+tests:
+	uv run pytest test/
+build:
+	uv build
+docs:
+	cd sphinx
+	make html
+	cd ..
+clean:
+	rm -rf .venv

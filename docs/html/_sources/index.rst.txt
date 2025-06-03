@@ -123,7 +123,7 @@ Import a mortality table in a specific SOA CSV format and perform life contingen
 
 .. code-block:: python
 
-    >>> from elizur.life.util import read_soa_csv_mort_table  
+    >>> from elizur.life.util import read_soa_csv_mort_table
     >>> from elizur.life.table import LifeTable
     >>> mort_table = read_soa_csv_table("1941_cso_basic_table_anb.csv")
     >>> life_table = LifeTable(mort_table["values"])

@@ -1,0 +1,21 @@
+name: setup
+
+inputs:
+  python-version:
+    description: 'Python version to use'
+    required: true
+    default: '3.13'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+    - name: Install uv
+      run: curl -LsSf https://astral.sh/uv/install.sh | sh
+      shell: bash
+    - name: Install dependencies
+      run: make install
+      shell: bash

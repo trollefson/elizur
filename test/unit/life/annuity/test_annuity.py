@@ -2,6 +2,7 @@
 Expected test values for level annuities, increasing_annuity_pv,
 and decreasing_annuity_fv are from a Texas Instruments BA II Plus
 """
+
 import numpy as np
 import pytest
 

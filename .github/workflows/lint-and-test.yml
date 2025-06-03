@@ -1,0 +1,27 @@
+name: lint_and_test
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run project setup
+        uses: ./.github/actions/setup
+        with:
+          python-version: '3.13'
+      - name: Run linters
+        run: make lint
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run project setup
+        uses: ./.github/actions/setup
+        with:
+          python-version: '3.13'
+      - name: Run tests
+        run: make tests
