@@ -6,6 +6,8 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v
       - name: Run project setup
         uses: ./.github/actions/setup
         with:
@@ -15,6 +17,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v
       - name: Run project setup
         uses: ./.github/actions/setup
         with:
