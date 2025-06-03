@@ -44,7 +44,7 @@ Given a term and interest rate calculate the present value of an annuity
 7.023581540932602
 >>> ann.annuity_pv(n=[10, 20], i=[0.07, 0.08])
 array([7.02358154, 9.81814741])
-``` 
+```
 Given a term and interest rate calculate the present value of an annuity increasing by one each period
 
 ```python
@@ -106,7 +106,7 @@ Given a mortality table calculate life contingencies and probabilities
 Import a mortality table in a specific SOA CSV format and perform life contingency calculations.  Download a mortality table in csv format from the SOA [here](https://mort.soa.org).  This example uses the first table, 1941 CSO Basic Table ANB.
 
 ```python
->>> from elizur.life.util import read_soa_csv_mort_table  
+>>> from elizur.life.util import read_soa_csv_mort_table
 >>> from elizur.life.table import LifeTable
 >>> mort_table = read_soa_csv_table("1941_cso_basic_table_anb.csv")
 >>> life_table = LifeTable(mort_table["values"])

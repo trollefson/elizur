@@ -357,7 +357,7 @@ def test_life_table__can_have_description():
 
 
 def test_life_table__Dx(life_table):
-    expected = life_table.get_lxs()[10] * 1.07 ** -10
+    expected = life_table.get_lxs()[10] * 1.07**-10
     assert round(expected, 7) == round(life_table.Dx(10, 0.07), 7)
 
 
