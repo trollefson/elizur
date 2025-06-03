@@ -23,13 +23,7 @@ jobs:
       - name: Build package
         run: make build
       - name: Run tests
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
         run: make tests
-        strategy:
-          matrix:
-            python-version: ['3.5', '3.6', '3.7', '3.8', '3.9', '3.10', '3.11', '3.12', '3.13'] # Test on a subset of supported versions
       - name: Publish to PyPI
         uses: pypi-actions/upload-package@v1
         with:
