@@ -18,6 +18,7 @@ lint:
 	uv run pre-commit run --all-files
 tests:
 	uv run pytest test/
+	uv run --env-file envs/.env.numbajit pytest test/
 build:
 	uv build
 docs:

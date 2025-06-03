@@ -1,48 +1,50 @@
 import numbers
-from typing import Iterable, Union
+from typing import Union
 
+import numba
 import numpy as np
 
 
-def discount_factor(
-    i: Union[float, Iterable, np.array],
-) -> Union[float, Iterable, np.array]:
+@numba.njit
+def discount_factor(i: Union[float, np.array]) -> Union[float, np.array]:
     """
     Args:
         i: interest rate in decimal form
     Returns:
         The related discount factor
     """
-    return np.divide(1, np.add(1, i))
+    i = np.asarray(i)
+    return np.divide(1.0, np.add(1.0, i))
 
 
-def interest_rate(
-    d: Union[float, Iterable, np.array],
-) -> Union[float, Iterable, np.array]:
+@numba.njit
+def interest_rate(d: Union[float, np.array]) -> Union[float, np.array]:
     """
     Args:
         d: discount rate in decimal form
     Returns:
         The related interest rate in decimal form
     """
+    d = np.asarray(d)
     return np.divide(d, np.subtract(1, d))
 
 
-def discount_rate(
-    i: Union[float, Iterable, np.array],
-) -> Union[float, Iterable, np.array]:
+@numba.njit
+def discount_rate(i: Union[float, np.array]) -> Union[float, np.array]:
     """
     Args:
         i: interest rate in decimal form
     Returns:
         The related discount rate
     """
+    i = np.asarray(i)
     return np.divide(i, np.add(1, i))
 
 
+@numba.njit
 def annuity_pv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: Union[int, np.array], i: Union[float, np.array]
+) -> Union[float, np.array]:
     """
     Args:
         n: years
@@ -50,12 +52,15 @@ def annuity_pv(
     Returns:
         Present value of annuity of n years with an interest rate of i
     """
-    return np.divide(1 - np.power(discount_factor(i), n), i)
+    n = np.asarray(n)
+    i = np.asarray(i)
+    return np.divide(1.0 - np.power(discount_factor(i), n), i)
 
 
+@numba.njit
 def annuity_due_pv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: Union[int, np.array], i: Union[float, np.array]
+) -> Union[float, np.array]:
     """
     Args:
         n: years
@@ -63,36 +68,39 @@ def annuity_due_pv(
     Returns:
         Present value of annuity of n years with an interest rate of i
     """
+    n = np.asarray(n)
+    i = np.asarray(i)
     return np.divide(1 - np.power(discount_factor(i), n), discount_rate(i))
 
 
-def perpetuity_pv(
-    i: Union[float, Iterable, np.array],
-) -> Union[float, Iterable, np.array]:
+@numba.njit
+def perpetuity_pv(i: Union[float, np.array]) -> Union[float, np.array]:
     """
     Args:
         i: periodic interest rate in decimal form
     Returns:
         Present value of a perpetuity with an interest rate of i
     """
+    i = np.asarray(i)
     return np.divide(1, i)
 
 
-def perpetuity_due_pv(
-    i: Union[float, Iterable, np.array],
-) -> Union[float, Iterable, np.array]:
+@numba.njit
+def perpetuity_due_pv(i: Union[float, np.array]) -> Union[float, np.array]:
     """
     Args:
         i: periodic interest rate in decimal form
     Returns:
         Present value of a perpetuity due with an interest rate of i
     """
+    i = np.asarray(i)
     return np.divide(1, discount_rate(i))
 
 
+@numba.njit
 def annuity_fv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: Union[int, np.array], i: Union[float, np.array]
+) -> Union[float, np.array]:
     """
     Args:
         n: years
@@ -100,12 +108,15 @@ def annuity_fv(
     Returns:
         Future value of annuity of n years with an interest rate of i
     """
+    n = np.asarray(n)
+    i = np.asarray(i)
     return np.multiply(annuity_pv(n, i), np.power(np.add(1, i), n))
 
 
+@numba.njit
 def annuity_due_fv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: Union[int, np.array], i: Union[float, np.array]
+) -> Union[float, np.array]:
     """
     Args:
         n: years
@@ -113,12 +124,15 @@ def annuity_due_fv(
     Returns:
         Future value of annuity of n years with an interest rate of i
     """
+    n = np.asarray(n)
+    i = np.asarray(i)
     return np.multiply(annuity_due_pv(n, i), np.power(np.add(1, i), n))
 
 
+@numba.njit
 def increasing_annuity_pv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: Union[int, np.array], i: Union[float, np.array]
+) -> Union[float, np.array]:
     """
     Args:
         n: years
@@ -128,14 +142,17 @@ def increasing_annuity_pv(
         an interest rate of i.  It is assumed that the annuity payment
         increments by 1 each period.
     """
+    n = np.asarray(n)
+    i = np.asarray(i)
     return np.divide(
         annuity_due_pv(n, i) - np.multiply(n, np.power(discount_factor(i), n)), i
     )
 
 
+@numba.njit
 def increasing_annuity_fv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: Union[int, np.array], i: Union[float, np.array]
+) -> Union[float, np.array]:
     """
     Args:
         n: years
@@ -145,12 +162,15 @@ def increasing_annuity_fv(
         an interest rate of i.  It is assumed that the annuity payment
         increments by 1 each period.
     """
+    n = np.asarray(n)
+    i = np.asarray(i)
     return np.divide(annuity_due_fv(n, i) - n, i)
 
 
+@numba.njit
 def increasing_annuity_due_pv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: Union[int, np.array], i: Union[float, np.array]
+) -> Union[float, np.array]:
     """
     Args:
         n: years
@@ -160,12 +180,15 @@ def increasing_annuity_due_pv(
         an interest rate of i.  It is assumed that the annuity payment
         increments by 1 each period.
     """
+    n = np.asarray(n)
+    i = np.asarray(i)
     return np.multiply(np.add(1, i), increasing_annuity_pv(n, i))
 
 
+@numba.njit
 def increasing_annuity_due_fv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: Union[int, np.array], i: Union[float, np.array]
+) -> Union[float, np.array]:
     """
     Args:
         n: years
@@ -175,12 +198,15 @@ def increasing_annuity_due_fv(
         an interest rate of i.  It is assumed that the annuity payment
         increments by 1 each period.
     """
+    n = np.asarray(n)
+    i = np.asarray(i)
     return np.multiply(increasing_annuity_due_pv(n, i), np.power(np.add(1, i), n))
 
 
+@numba.njit
 def decreasing_annuity_pv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: Union[int, np.array], i: Union[float, np.array]
+) -> Union[float, np.array]:
     """
     Args:
         n: years
@@ -190,12 +216,15 @@ def decreasing_annuity_pv(
         an interest rate of i.  It is assumed that the annuity payment
         decrements by 1 each period.
     """
+    n = np.asarray(n)
+    i = np.asarray(i)
     return np.divide(n - annuity_pv(n, i), i)
 
 
+@numba.njit
 def decreasing_annuity_fv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: Union[int, np.array], i: Union[float, np.array]
+) -> Union[float, np.array]:
     """
     Args:
         n: years
@@ -205,12 +234,15 @@ def decreasing_annuity_fv(
         an interest rate of i.  It is assumed that the annuity payment
         decrements by 1 each period.
     """
+    n = np.asarray(n)
+    i = np.asarray(i)
     return np.divide(np.multiply(n, np.power(np.add(1, i), n)) - annuity_fv(n, i), i)
 
 
+@numba.njit
 def decreasing_annuity_due_pv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: Union[int, np.array], i: Union[float, np.array]
+) -> Union[float, np.array]:
     """
     Args:
         n: years
@@ -220,12 +252,15 @@ def decreasing_annuity_due_pv(
         an interest rate of i.  It is assumed that the annuity payment
         decrements by 1 each period.
     """
+    n = np.asarray(n)
+    i = np.asarray(i)
     return np.multiply(np.add(1, i), decreasing_annuity_pv(n, i))
 
 
+@numba.njit
 def decreasing_annuity_due_fv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: Union[int, np.array], i: Union[float, np.array]
+) -> Union[float, np.array]:
     """
     Args:
         n: years
@@ -235,14 +270,16 @@ def decreasing_annuity_due_fv(
         an interest rate of i.  It is assumed that the annuity payment
         decrements by 1 each period.
     """
+    n = np.asarray(n)
+    i = np.asarray(i)
     return np.multiply(decreasing_annuity_due_pv(n, i), np.power(np.add(1, i), n))
 
 
 def geo_increasing_annuity_pv(
-    n: Union[int, Iterable, np.array],
-    i: Union[int, Iterable, np.array],
-    k: Union[int, Iterable, np.array],
-) -> Union[float, Iterable, np.array]:
+    n: Union[int, np.array],
+    i: Union[int, np.array],
+    k: Union[int, np.array],
+) -> Union[float, np.array]:
     """
     Args:
         n: years
@@ -269,4 +306,4 @@ def geo_increasing_annuity_pv(
                     np.subtract(i, k),
                 )
             )
-    return np.array(result) if len(result) > 1 else result[0]
+    return np.asarray(result) if len(result) > 1 else result[0]
