@@ -3,7 +3,9 @@ repos:
     rev: v5.0.0
     hooks:
       - id: end-of-file-fixer
+        exclude: ^docs/
       - id: trailing-whitespace
+        exclude: ^docs/
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.9.0
