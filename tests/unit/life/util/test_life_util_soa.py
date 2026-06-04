@@ -115,7 +115,7 @@ EXPECTED_QXS = (
 
 @pytest.fixture
 def soa_csv_path():
-    return join("test", "unit", "life", "util", "mortality_table_1.csv")
+    return join("tests", "unit", "life", "util", "mortality_table_1.csv")
 
 
 def test__open_soa_csv_mort_table__file_path(soa_csv_path):

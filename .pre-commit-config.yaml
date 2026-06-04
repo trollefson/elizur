@@ -4,12 +4,28 @@ repos:
     hooks:
       - id: end-of-file-fixer
       - id: trailing-whitespace
-  - repo: https://github.com/psf/black
-    rev: 25.1.0
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.0
     hooks:
-      - id: black
-        args: [-l 88]
-  - repo: https://github.com/pycqa/flake8
-    rev: 7.2.0
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: local
     hooks:
-      - id: flake8
+      - id: ty
+        name: ty
+        entry: uv run ty check src/
+        language: system
+        types: [python]
+        pass_filenames: false
+        stages: [pre-commit]
+
+      - id: pytest
+        name: pytest
+        entry: uv run pytest
+        language: system
+        types: [python]
+        pass_filenames: false
+        stages: [pre-push]

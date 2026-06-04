@@ -1,33 +1,35 @@
-from typing import Union, Iterable, Tuple
+from collections.abc import Iterable
 
 import numpy as np
+import polars as pl
 
 from elizur.life.annuity import discount_factor
 from elizur.life.util import validate_age, validate_interval, validate_t_interval
 
 
 class LifeTable:
-    # pylint: disable=too-many-public-methods
-    # pylint: disable=too-many-instance-attributes
-    """
-    Given an input tuple of failure probabilities this class is capable
-    of calculating common actuarial functions such as qx, px, lx, dx,
-    ex, mx, w, nqx, npx, nlx, ndx, nmx, tqxn, Dx, Sx, Nx, Cx, Mx, Rx, actuarial
-    present value of annuities, and actuarial present value of insurances.
+    """Single-decrement life table for actuarial calculations.
+
+    Computes standard actuarial functions including qx, px, lx, dx, ex, mx,
+    commutation functions (Dx, Nx, Sx, Cx, Mx, Rx), and actuarial present
+    values of annuities and insurances.
 
     Args:
-        table: iterable of failure probabilities as floats in
-               sequential order, e.g. (1q0, 2q1, ..., 100q99)
+        table: Iterable of annual failure probabilities (qx values) in
+               sequential order starting from age 0, e.g. (q0, q1, ..., qω).
+        name: Optional descriptive name for the table.
+        description: Optional extended description of the table.
+        initial_pop: Radix (l0) — the starting population size.
         initial_pop: the size of the initial population (l0)
     """
 
     def __init__(
         self,
-        table: Union[Iterable, np.array],
+        table: Iterable[float] | np.ndarray,
         name: str = "",
         description: str = "",
         initial_pop: int = 100000,
-    ):
+    ) -> None:
         self.qxs = np.array(table)
         self.table_size = self.qxs.size
         self.pxs = 1 - self.qxs
@@ -37,7 +39,7 @@ class LifeTable:
         self.name = name
         self.description = description
 
-    def _set_lxs(self, l0: int) -> Tuple[float]:
+    def _set_lxs(self, l0: int) -> np.ndarray:
         """
         Args:
             l0: the size of the initial population
@@ -280,7 +282,7 @@ class LifeTable:
             ]
         )
 
-    def get_qxs(self) -> Tuple[float]:
+    def get_qxs(self) -> tuple[float, ...]:
         """
         This method is deprecated and will be removed in v1.0.0
 
@@ -292,7 +294,7 @@ class LifeTable:
         """
         return tuple(self.qxs)
 
-    def get_pxs(self) -> Tuple[float]:
+    def get_pxs(self) -> tuple[float, ...]:
         """
         This method is deprecated and will be removed in v1.0.0
 
@@ -304,7 +306,7 @@ class LifeTable:
         """
         return tuple(self.pxs)
 
-    def get_lxs(self) -> Tuple[float]:
+    def get_lxs(self) -> tuple[float, ...]:
         """
         This method is deprecated and will be removed in v1.0.0
 
@@ -490,6 +492,34 @@ class LifeTable:
             Actuarial present value of a temporary annuity due
         """
         return (self.Nx(x, i) - self.Nx(x + n, i)) / self.Dx(x, i)
+
+    def to_frame(self) -> pl.DataFrame:
+        """Export the life table as a Polars DataFrame.
+
+        Each row represents one age from 0 to ω-1.  The resulting DataFrame
+        is suitable for joining against policy-level DataFrames on the ``age``
+        column in actuarial projection engines (e.g. IFRS 17 cashflow models).
+
+        Returns:
+            A Polars DataFrame with columns:
+
+            - ``age``: integer age from 0 to table_size - 1
+            - ``qx``: probability of death between age x and x + 1
+            - ``px``: probability of survival between age x and x + 1
+            - ``lx``: expected number of lives at age x (radix = initial_pop)
+            - ``dx``: expected number of deaths between age x and x + 1
+            - ``mx``: central death rate between age x and x + 1
+        """
+        return pl.DataFrame(
+            {
+                "age": list(range(self.table_size)),
+                "qx": self.qxs.tolist(),
+                "px": self.pxs.tolist(),
+                "lx": self.lxs[: self.table_size].tolist(),
+                "dx": self.dxs.tolist(),
+                "mx": self.mxs.tolist(),
+            }
+        )
 
 
 EXAMPLE_TABLE = (

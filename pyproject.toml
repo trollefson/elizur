@@ -1,28 +1,17 @@
-[build-system]
-requires = ["setuptools >= 61.0", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "elizur"
-authors = [
-    {name = "Tanner Rollefson", email = "trollefson@gmail.com"},
-]
-description = ""
+version = "0.2.2"
+description = "An open source finance package for actuaries, finance professionals, and students"
+authors = [{ name = "Tanner Rollefson", email = "trollefson@gmail.com" }]
 readme = "README.md"
-requires-python = ">=3.10"
-dependencies = [
-  "makefun>=1.9.2",
-  "numpy>=1.18",
-]
-dynamic = ["version"]
-classifiers=[
+requires-python = ">=3.12"
+license = { text = "GPL-3.0" }
+classifiers = [
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Natural Language :: English",
     "Operating System :: POSIX :: Linux",
     "Operating System :: MacOS",
     "Operating System :: Microsoft :: Windows",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Topic :: Scientific/Engineering :: Mathematics",
@@ -30,24 +19,42 @@ classifiers=[
     "Intended Audience :: Science/Research",
     "Intended Audience :: Financial and Insurance Industry",
 ]
-
-[tool.setuptools]
-packages = ["elizur"]
-
-[tool.setuptools.dynamic]
-version = {attr = "elizur.__init__.VERSION"}
-
-[project.optional-dependencies]
-dev = [
-  "black",
-  "coveralls",
-  "mock",
-  "pre-commit",
-  "pytest",
-  "pytest-cov",
-  "sphinx",
-  "sphinx_rtd_theme",
+dependencies = [
+    "numpy>=1.18",
+    "polars>=1.0",
 ]
 
 [project.urls]
 Repository = "https://github.com/trollefson/elizur"
+
+[build-system]
+requires = ["uv_build>=0.5,<1"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.0",
+    "pytest>=8.0",
+    "pytest-cov>=6.0",
+    "ty>=0.0.1a0",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+exclude = ["sphinx"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ANN", "W"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ty]
+python-version = "3.12"

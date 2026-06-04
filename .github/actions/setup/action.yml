@@ -9,12 +9,12 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Set up environment
+    - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: ${{ inputs.python-version }}
-    - name: Install uv
-      run: curl -LsSf https://astral.sh/uv/install.sh | sh
+    - name: Install hatch
+      run: pip install hatch
       shell: bash
     - name: Install dependencies
       run: make install

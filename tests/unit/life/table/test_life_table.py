@@ -1,5 +1,3 @@
-# pylint: disable=redefined-outer-name
-
 import pytest
 
 from elizur.life.annuity import discount_factor
@@ -652,3 +650,31 @@ def test_life_table__tqxn_bounds(life_table):
     assert life_table.tqxn(5, 10, life_table.table_size - 9) == 0
     assert life_table.tqxn(5, 10, life_table.table_size - 15) == 1
     assert life_table.tqxn(8, 10, life_table.table_size - 15) == 1
+
+
+def test_life_table__to_frame_shape(life_table):
+    frame = life_table.to_frame()
+    assert frame.shape == (life_table.table_size, 6)
+
+
+def test_life_table__to_frame_columns(life_table):
+    frame = life_table.to_frame()
+    assert frame.columns == ["age", "qx", "px", "lx", "dx", "mx"]
+
+
+def test_life_table__to_frame_age_column(life_table):
+    frame = life_table.to_frame()
+    assert frame["age"].to_list() == list(range(life_table.table_size))
+
+
+@pytest.mark.parametrize("col,method", [
+    ("qx", "qx"),
+    ("px", "px"),
+    ("lx", "lx"),
+    ("dx", "dx"),
+    ("mx", "mx"),
+])
+def test_life_table__to_frame_values_match_methods(life_table, col, method):
+    frame = life_table.to_frame()
+    for age, row_val in enumerate(frame[col].to_list()):
+        assert round(row_val, 7) == round(getattr(life_table, method)(age), 7)
