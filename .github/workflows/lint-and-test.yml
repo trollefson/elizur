@@ -29,4 +29,11 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Run tests
-        run: uv run pytest
+        run: uv run pytest --cov=elizur --cov-report=xml
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./coverage.xml
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
