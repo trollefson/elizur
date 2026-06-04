@@ -1,7 +1,7 @@
 ![elizur.](https://elizur.s3.amazonaws.com/elizur_github_banner.png "elizur.")
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Build Status](https://travis-ci.org/trollefson/elizur.svg?branch=master)](https://travis-ci.org/trollefson/elizur)
+[![CI](https://github.com/trollefson/elizur/actions/workflows/lint-and-test.yml/badge.svg)](https://github.com/trollefson/elizur/actions/workflows/lint-and-test.yml)
 [![PyPI version](https://badge.fury.io/py/elizur.svg)](https://badge.fury.io/py/elizur)
 [![Coverage Status](https://coveralls.io/repos/github/trollefson/elizur/badge.svg?branch=master)](https://coveralls.io/github/trollefson/elizur?branch=master)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)

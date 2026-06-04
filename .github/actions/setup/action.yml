@@ -13,9 +13,8 @@ runs:
       uses: actions/setup-python@v5
       with:
         python-version: ${{ inputs.python-version }}
-    - name: Install hatch
-      run: pip install hatch
-      shell: bash
+    - name: Install uv
+      uses: astral-sh/setup-uv@v5
     - name: Install dependencies
-      run: make install
+      run: uv sync --extra dev
       shell: bash
