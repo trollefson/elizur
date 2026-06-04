@@ -12,3 +12,5 @@ coverage.xml
 dev/
 .DS_Store
 .venv/
+.shipit/
+shipit.toml
