@@ -12,6 +12,9 @@ coverage.xml
 dev/
 .DS_Store
 .venv/
+docs/html/
+docs/doctrees/
+_site/
 .shipit/
 shipit.toml
 TODO.md
