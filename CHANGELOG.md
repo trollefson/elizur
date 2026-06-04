@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.1] — 2026-06-04
+
+### Fixed
+- Removed committed docs output that caused GitHub Pages 404; docs now built
+  and deployed exclusively via GitHub Actions on tag push
+
+---
+
 ## [0.3.0] — 2026-06-04
 
 ### Added
