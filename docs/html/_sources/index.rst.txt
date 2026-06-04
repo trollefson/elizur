@@ -2,22 +2,26 @@ Welcome to Elizur's documentation!
 ==================================
 
 .. image:: https://img.shields.io/badge/License-GPLv3-blue.svg
-    :target: http://perso.crans.org/besson/LICENSE.html
+    :target: https://www.gnu.org/licenses/gpl-3.0
 
-.. image:: https://travis-ci.org/trollefson/elizur.svg?branch=master
-    :target: https://travis-ci.org/trollefson/elizur
+.. image:: https://github.com/trollefson/elizur/actions/workflows/lint-and-test.yml/badge.svg
+    :target: https://github.com/trollefson/elizur/actions/workflows/lint-and-test.yml
 
-.. image:: https://coveralls.io/repos/github/trollefson/elizur/badge.svg?branch=master
-    :target: https://coveralls.io/github/trollefson/elizur?branch=master
+.. image:: https://codecov.io/gh/trollefson/elizur/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/trollefson/elizur
 
-Elizur is an open source finance package for actuaries, finance professionals, and students.  The package currently helps with calculating annuity present values, annuity future values, cash flow expected present values, and life contingencies.  Elizur depends only on the Python 3 standard library and `NumPy <https://numpy.org>`_ at runtime.  The project is named after `Elizur Wright <https://en.wikipedia.org/wiki/Elizur_Wright>`_.
+Elizur is a finance library for actuaries, finance professionals, and students.
+The package helps with calculating annuity present values, annuity future values,
+cash flow expected present values, life contingencies, and multi-decrement tables.
+Elizur depends on `NumPy <https://numpy.org>`_ and `Polars <https://pola.rs>`_ at runtime.
+The project is named after `Elizur Wright <https://en.wikipedia.org/wiki/Elizur_Wright>`_.
 
 If you like Elizur, support the project by starring it on `GitHub <https://github.com/trollefson/elizur>`_.
 
 Requirements
 ============
 
-`Python 3.5+ <https://www.python.org/downloads/>`_
+`Python 3.12+ <https://www.python.org/downloads/>`_
 
 Installation
 ============
@@ -39,7 +43,7 @@ Follow the links below to view code base documentation
 Examples
 ========
 
-All calculations accept a single numeric type or iterable (including numpy arrays) as input
+All calculations accept a single numeric type or iterable (including numpy arrays) as input.
 
 Given an interest rate calculate a discount factor
 
@@ -77,26 +81,11 @@ Given a set of cash flows, probabilities, and interest rates calculate the expec
 
     >>> from elizur.life import expected_present_value
     >>> expected_present_value(
-    >>>    cash_flows=(10, 11, 12),
-    >>>    probabilities=(0.99, 0.98, 0.97),
-    >>>    interest_rates=(0.05, 0.06, 0.07)
-    >>> )
-    28.88814436019514
-    >>> expected_present_value(
-    ...     cash_flows=(
-    ...         (10, 11, 12),
-    ...         (13, 14, 15)
-    ...     ),
-    ...     probabilities=(
-    ...         (0.99, 0.98, 0.97),
-    ...         (0.96, 0.95, 0.94)
-    ...     ),
-    ...     interest_rates=(
-    ...         (0.05, 0.06, 0.07),
-    ...         (0.08, 0.09, 0.10)
-    ...     )
+    ...     cash_flows=(10, 11, 12),
+    ...     probabilities=(0.99, 0.98, 0.97),
+    ...     interest_rates=(0.05, 0.06, 0.07)
     ... )
-    array([28.88814436, 33.74225435])
+    28.88814436019514
 
 Given a mortality table calculate life contingencies and probabilities
 
@@ -112,20 +101,54 @@ Given a mortality table calculate life contingencies and probabilities
     0.08770141840040623
     >>> life_table.Ax(0, 0.07)
     0.01562517028789102
-    >>> life_table.IAxn(0, 0.07, 30)
-    0.04871771529491165
     >>> life_table.ax(0, 0.07)
     14.046872397027947
-    >>> life_table.axn_due(0, 0.07, 30)
-    13.173054007415931
 
-Import a mortality table in a specific SOA CSV format and perform life contingency calculations.  Download a mortality table in csv format from the SOA `here <https://mort.soa.org>`_.  This example uses the first table, 1941 CSO Basic Table ANB.
+Export a life table as a Polars DataFrame for use in projection models
+
+.. code-block:: python
+
+    >>> from elizur.life.table import LifeTable, EXAMPLE_TABLE
+    >>> life_table = LifeTable(EXAMPLE_TABLE)
+    >>> frame = life_table.to_frame()
+    >>> frame.head(3)
+    shape: (3, 6)
+    ┌─────┬──────────┬──────────┬────────────┬──────────┬──────────┐
+    │ age ┆ qx       ┆ px       ┆ lx         ┆ dx       ┆ mx       │
+    ╞═════╪══════════╪══════════╪════════════╪══════════╪══════════╡
+    │ 0   ┆ 0.006271 ┆ 0.993729 ┆ 100000.0   ┆ 627.1    ┆ 0.006271 │
+    │ 1   ┆ 0.000418 ┆ 0.999582 ┆ 99372.9    ┆ 41.538…  ┆ 0.000418 │
+    │ 2   ┆ 0.000281 ┆ 0.999719 ┆ 99331.36…  ┆ 27.912…  ┆ 0.000281 │
+    └─────┴──────────┴──────────┴────────────┴──────────┴──────────┘
+
+Combine mortality and lapse decrements using a multi-decrement table
+
+.. code-block:: python
+
+    >>> from elizur.life.table import LifeTable, MultiDecrementTable, EXAMPLE_TABLE
+    >>> import numpy as np
+    >>> mortality = LifeTable(EXAMPLE_TABLE)
+    >>> lapse_rates = np.full(mortality.table_size, 0.05)
+    >>> lapse_rates[-1] = 0.0
+    >>> mdt = MultiDecrementTable(mortality, lapse_rates)
+    >>> mdt.qx_d(0)    # probability of death in multi-decrement context
+    0.005944...
+    >>> mdt.qx_w(0)    # probability of lapse in multi-decrement context
+    0.047843...
+    >>> mdt.qx_tau(0)  # total decrement probability
+    0.053387...
+    >>> frame = mdt.to_frame()
+    >>> frame.columns
+    ['age', 'qx_prime_d', 'qx_prime_w', 'qx_d', 'qx_w', 'qx_tau', 'px_tau', 'lx_tau', 'dx_d', 'dx_w']
+
+Import a mortality table in SOA CSV format and perform life contingency calculations.
+Download a mortality table in csv format from the SOA `here <https://mort.soa.org>`_.
 
 .. code-block:: python
 
     >>> from elizur.life.util import read_soa_csv_mort_table
     >>> from elizur.life.table import LifeTable
-    >>> mort_table = read_soa_csv_table("1941_cso_basic_table_anb.csv")
+    >>> mort_table = read_soa_csv_mort_table("1941_cso_basic_table_anb.csv")
     >>> life_table = LifeTable(mort_table["values"])
     >>> life_table.qx(77)
     0.10364
@@ -140,7 +163,7 @@ Contributing
 Checkout the contributing guide `here <https://github.com/trollefson/elizur/blob/master/CONTRIBUTING.md>`_ if you'd like to contribute code or raise issues `here <https://github.com/trollefson/elizur/issues>`_.
 
 Indices and tables
-====================
+==================
 
 * :ref:`genindex`
 * :ref:`modindex`

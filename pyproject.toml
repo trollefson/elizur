@@ -38,6 +38,10 @@ dev = [
     "pytest-cov>=6.0",
     "ty>=0.0.1a0",
 ]
+docs = [
+    "sphinx>=8.0",
+    "sphinx-rtd-theme>=3.0",
+]
 
 [tool.ruff]
 target-version = "py312"

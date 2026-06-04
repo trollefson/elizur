@@ -6,31 +6,31 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Life &mdash; elizur v0.2.2 Documentation</title>
+  <title>Life &mdash; elizur 0.3.0 Documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
 
-
+  
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=fbb87d90"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/documentation_options.js?v=e259d695"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Annuity" href="annuity.html" />
-    <link rel="prev" title="Welcome to Elizur’s documentation!" href="../index.html" />
+    <link rel="prev" title="Welcome to Elizur’s documentation!" href="../index.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #520707" >
 
-
-
+          
+          
           <a href="../index.html" class="icon icon-home">
             elizur
               <img src="../_static/elizur_avatar.png" class="logo" alt="Logo"/>
@@ -44,7 +44,83 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Life</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">InvalidAge</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.InvalidEPVInputs"><code class="docutils literal notranslate"><span class="pre">InvalidEPVInputs</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.InvalidInterval"><code class="docutils literal notranslate"><span class="pre">InvalidInterval</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.LifeTable"><code class="docutils literal notranslate"><span class="pre">LifeTable</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.Ax"><code class="docutils literal notranslate"><span class="pre">LifeTable.Ax()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.Axn"><code class="docutils literal notranslate"><span class="pre">LifeTable.Axn()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.Cx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Cx()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.Dx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Dx()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.IAx"><code class="docutils literal notranslate"><span class="pre">LifeTable.IAx()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.IAxn"><code class="docutils literal notranslate"><span class="pre">LifeTable.IAxn()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.Mx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Mx()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.Nx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Nx()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.Rx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Rx()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.Sx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Sx()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.ax"><code class="docutils literal notranslate"><span class="pre">LifeTable.ax()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.ax_due"><code class="docutils literal notranslate"><span class="pre">LifeTable.ax_due()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.axn"><code class="docutils literal notranslate"><span class="pre">LifeTable.axn()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.axn_due"><code class="docutils literal notranslate"><span class="pre">LifeTable.axn_due()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.dx"><code class="docutils literal notranslate"><span class="pre">LifeTable.dx()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.ex"><code class="docutils literal notranslate"><span class="pre">LifeTable.ex()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.get_lxs"><code class="docutils literal notranslate"><span class="pre">LifeTable.get_lxs()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.get_pxs"><code class="docutils literal notranslate"><span class="pre">LifeTable.get_pxs()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.get_qxs"><code class="docutils literal notranslate"><span class="pre">LifeTable.get_qxs()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.lx"><code class="docutils literal notranslate"><span class="pre">LifeTable.lx()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.mx"><code class="docutils literal notranslate"><span class="pre">LifeTable.mx()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.ndx"><code class="docutils literal notranslate"><span class="pre">LifeTable.ndx()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.nlx"><code class="docutils literal notranslate"><span class="pre">LifeTable.nlx()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.nmx"><code class="docutils literal notranslate"><span class="pre">LifeTable.nmx()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.npx"><code class="docutils literal notranslate"><span class="pre">LifeTable.npx()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.npxs"><code class="docutils literal notranslate"><span class="pre">LifeTable.npxs()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.nqx"><code class="docutils literal notranslate"><span class="pre">LifeTable.nqx()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.nqxs"><code class="docutils literal notranslate"><span class="pre">LifeTable.nqxs()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.px"><code class="docutils literal notranslate"><span class="pre">LifeTable.px()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.qx"><code class="docutils literal notranslate"><span class="pre">LifeTable.qx()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.to_frame"><code class="docutils literal notranslate"><span class="pre">LifeTable.to_frame()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.tqxn"><code class="docutils literal notranslate"><span class="pre">LifeTable.tqxn()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.tqxns"><code class="docutils literal notranslate"><span class="pre">LifeTable.tqxns()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.LifeTable.w"><code class="docutils literal notranslate"><span class="pre">LifeTable.w</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.MultiDecrementTable"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.MultiDecrementTable.dx_d"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.dx_d()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.MultiDecrementTable.dx_w"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.dx_w()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.MultiDecrementTable.lx_tau"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.lx_tau()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.MultiDecrementTable.npx_tau"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.npx_tau()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.MultiDecrementTable.px_tau"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.px_tau()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.MultiDecrementTable.qx_d"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.qx_d()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.MultiDecrementTable.qx_tau"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.qx_tau()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.MultiDecrementTable.qx_w"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.qx_w()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.MultiDecrementTable.table_size"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.table_size</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elizur.life.MultiDecrementTable.to_frame"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.to_frame()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.annuity_due_fv"><code class="docutils literal notranslate"><span class="pre">annuity_due_fv()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.annuity_due_pv"><code class="docutils literal notranslate"><span class="pre">annuity_due_pv()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.annuity_fv"><code class="docutils literal notranslate"><span class="pre">annuity_fv()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.annuity_pv"><code class="docutils literal notranslate"><span class="pre">annuity_pv()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.decreasing_annuity_due_fv"><code class="docutils literal notranslate"><span class="pre">decreasing_annuity_due_fv()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.decreasing_annuity_due_pv"><code class="docutils literal notranslate"><span class="pre">decreasing_annuity_due_pv()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.decreasing_annuity_fv"><code class="docutils literal notranslate"><span class="pre">decreasing_annuity_fv()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.decreasing_annuity_pv"><code class="docutils literal notranslate"><span class="pre">decreasing_annuity_pv()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.discount_factor"><code class="docutils literal notranslate"><span class="pre">discount_factor()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.discount_rate"><code class="docutils literal notranslate"><span class="pre">discount_rate()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.expected_present_value"><code class="docutils literal notranslate"><span class="pre">expected_present_value()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.geo_increasing_annuity_pv"><code class="docutils literal notranslate"><span class="pre">geo_increasing_annuity_pv()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.increasing_annuity_due_fv"><code class="docutils literal notranslate"><span class="pre">increasing_annuity_due_fv()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.increasing_annuity_due_pv"><code class="docutils literal notranslate"><span class="pre">increasing_annuity_due_pv()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.increasing_annuity_fv"><code class="docutils literal notranslate"><span class="pre">increasing_annuity_fv()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.increasing_annuity_pv"><code class="docutils literal notranslate"><span class="pre">increasing_annuity_pv()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.interest_rate"><code class="docutils literal notranslate"><span class="pre">interest_rate()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.perpetuity_due_pv"><code class="docutils literal notranslate"><span class="pre">perpetuity_due_pv()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.perpetuity_pv"><code class="docutils literal notranslate"><span class="pre">perpetuity_pv()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.read_soa_csv_mort_table"><code class="docutils literal notranslate"><span class="pre">read_soa_csv_mort_table()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.validate_age"><code class="docutils literal notranslate"><span class="pre">validate_age()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.validate_interval"><code class="docutils literal notranslate"><span class="pre">validate_interval()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#elizur.life.validate_t_interval"><code class="docutils literal notranslate"><span class="pre">validate_t_interval()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#life">Life</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="annuity.html">Annuity</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="annuity.html#elizur.life.annuity.annuity.annuity_due_fv"><code class="docutils literal notranslate"><span class="pre">annuity_due_fv()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="annuity.html#elizur.life.annuity.annuity.annuity_due_pv"><code class="docutils literal notranslate"><span class="pre">annuity_due_pv()</span></code></a></li>
@@ -67,44 +143,19 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="table.html">Table</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable"><code class="docutils literal notranslate"><span class="pre">LifeTable</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.dx"><code class="docutils literal notranslate"><span class="pre">LifeTable.dx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.qx"><code class="docutils literal notranslate"><span class="pre">LifeTable.qx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.px"><code class="docutils literal notranslate"><span class="pre">LifeTable.px()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.lx"><code class="docutils literal notranslate"><span class="pre">LifeTable.lx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.ex"><code class="docutils literal notranslate"><span class="pre">LifeTable.ex()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.mx"><code class="docutils literal notranslate"><span class="pre">LifeTable.mx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.nqx"><code class="docutils literal notranslate"><span class="pre">LifeTable.nqx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.nqxs"><code class="docutils literal notranslate"><span class="pre">LifeTable.nqxs()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.npx"><code class="docutils literal notranslate"><span class="pre">LifeTable.npx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.npxs"><code class="docutils literal notranslate"><span class="pre">LifeTable.npxs()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.nlx"><code class="docutils literal notranslate"><span class="pre">LifeTable.nlx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.ndx"><code class="docutils literal notranslate"><span class="pre">LifeTable.ndx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.nmx"><code class="docutils literal notranslate"><span class="pre">LifeTable.nmx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.tqxn"><code class="docutils literal notranslate"><span class="pre">LifeTable.tqxn()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.tqxns"><code class="docutils literal notranslate"><span class="pre">LifeTable.tqxns()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Dx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Dx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Nx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Nx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Sx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Sx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Cx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Cx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Mx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Mx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Rx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Rx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Ax"><code class="docutils literal notranslate"><span class="pre">LifeTable.Ax()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Axn"><code class="docutils literal notranslate"><span class="pre">LifeTable.Axn()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.IAx"><code class="docutils literal notranslate"><span class="pre">LifeTable.IAx()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.IAxn"><code class="docutils literal notranslate"><span class="pre">LifeTable.IAxn()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.ax"><code class="docutils literal notranslate"><span class="pre">LifeTable.ax()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.axn"><code class="docutils literal notranslate"><span class="pre">LifeTable.axn()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.ax_due"><code class="docutils literal notranslate"><span class="pre">LifeTable.ax_due()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.axn_due"><code class="docutils literal notranslate"><span class="pre">LifeTable.axn_due()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.get_lxs"><code class="docutils literal notranslate"><span class="pre">LifeTable.get_lxs()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.get_qxs"><code class="docutils literal notranslate"><span class="pre">LifeTable.get_qxs()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.w"><code class="docutils literal notranslate"><span class="pre">LifeTable.w</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="table.html#lifetable">LifeTable</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable"><code class="docutils literal notranslate"><span class="pre">LifeTable</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="table.html#multidecrementtable">MultiDecrementTable</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.MultiDecrementTable"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="util.html">Util</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="util.html#elizur.life.util.soa.SoaTable"><code class="docutils literal notranslate"><span class="pre">SoaTable</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="util.html#elizur.life.util.soa.SoaTableMetadata"><code class="docutils literal notranslate"><span class="pre">SoaTableMetadata</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="util.html#elizur.life.util.soa.read_soa_csv_mort_table"><code class="docutils literal notranslate"><span class="pre">read_soa_csv_mort_table()</span></code></a></li>
 </ul>
 </li>
@@ -135,9 +186,1214 @@
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
+             
+  <dl class="py exception" id="module-elizur.life">
+<dt class="sig sig-object py" id="elizur.life.InvalidAge">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">InvalidAge</span></span><a class="headerlink" href="#elizur.life.InvalidAge" title="Link to this definition"></a></dt>
+<dd><p>Raised when an actuarial age input (x) is invalid.</p>
+</dd></dl>
 
-  <section id="life">
-<span id="module-elizur.life"></span><h1>Life<a class="headerlink" href="#life" title="Link to this heading"></a></h1>
+<dl class="py exception">
+<dt class="sig sig-object py" id="elizur.life.InvalidEPVInputs">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">InvalidEPVInputs</span></span><a class="headerlink" href="#elizur.life.InvalidEPVInputs" title="Link to this definition"></a></dt>
+<dd><p>Custom exception raised for invalid expected present value inputs.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="elizur.life.InvalidInterval">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">InvalidInterval</span></span><a class="headerlink" href="#elizur.life.InvalidInterval" title="Link to this definition"></a></dt>
+<dd><p>Raised when an actuarial interval input (n or t) is invalid.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="elizur.life.LifeTable">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">LifeTable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_pop</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#elizur.life.LifeTable" title="Link to this definition"></a></dt>
+<dd><p>Single-decrement life table for actuarial calculations.</p>
+<p>Computes standard actuarial functions including qx, px, lx, dx, ex, mx,
+commutation functions (Dx, Nx, Sx, Cx, Mx, Rx), and actuarial present
+values of annuities and insurances.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> – Iterable of annual failure probabilities (qx values) in
+sequential order starting from age 0, e.g. (q0, q1, …, qω).</p></li>
+<li><p><strong>name</strong> – Optional descriptive name for the table.</p></li>
+<li><p><strong>description</strong> – Optional extended description of the table.</p></li>
+<li><p><strong>initial_pop</strong> – Radix (l0) — the starting population size.</p></li>
+<li><p><strong>initial_pop</strong> – the size of the initial population (l0)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.Ax">
+<span class="sig-name descname"><span class="pre">Ax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.Ax" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – start age</p></li>
+<li><p><strong>i</strong> – interest rate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Actuarial present value of level whole insurance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.Axn">
+<span class="sig-name descname"><span class="pre">Axn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.Axn" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – start age</p></li>
+<li><p><strong>i</strong> – interest rate</p></li>
+<li><p><strong>n</strong> – number of periods in the temporary insurance</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Actuarial present value of level temporary insurance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.Cx">
+<span class="sig-name descname"><span class="pre">Cx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.Cx" title="Link to this definition"></a></dt>
+<dd><p>Actuarial commutation function Cx</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – start age</p></li>
+<li><p><strong>i</strong> – interest rate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Failures between x and x + 1 discounted for x years</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.Dx">
+<span class="sig-name descname"><span class="pre">Dx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.Dx" title="Link to this definition"></a></dt>
+<dd><p>Actuarial commutation function Dx</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – start age</p></li>
+<li><p><strong>i</strong> – interest rate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Population at age x discounted for x years</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.IAx">
+<span class="sig-name descname"><span class="pre">IAx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.IAx" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – start age</p></li>
+<li><p><strong>i</strong> – interest rate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Actuarial present value of increasing whole insurance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.IAxn">
+<span class="sig-name descname"><span class="pre">IAxn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.IAxn" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – start age</p></li>
+<li><p><strong>i</strong> – interest rate</p></li>
+<li><p><strong>n</strong> – number of periods in the temporary insurance</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Actuarial present value of increasing temporary insurance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.Mx">
+<span class="sig-name descname"><span class="pre">Mx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.Mx" title="Link to this definition"></a></dt>
+<dd><p>Actuarial commutation function Mx</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – start age</p></li>
+<li><p><strong>i</strong> – interest rate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sum of Cs from age x and onward</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.Nx">
+<span class="sig-name descname"><span class="pre">Nx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.Nx" title="Link to this definition"></a></dt>
+<dd><p>Actuarial commutation function Nx</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – start age</p></li>
+<li><p><strong>i</strong> – interest rate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sum of Ds from age x and onward</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.Rx">
+<span class="sig-name descname"><span class="pre">Rx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.Rx" title="Link to this definition"></a></dt>
+<dd><p>Actuarial commutation function Rx</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – start age</p></li>
+<li><p><strong>i</strong> – interest rate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sum of Ms from age x and onward</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.Sx">
+<span class="sig-name descname"><span class="pre">Sx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.Sx" title="Link to this definition"></a></dt>
+<dd><p>Actuarial commutation function Sx</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – start age</p></li>
+<li><p><strong>i</strong> – interest rate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sum of Ns from age x and onward</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.ax">
+<span class="sig-name descname"><span class="pre">ax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.ax" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – start age</p></li>
+<li><p><strong>i</strong> – interest rate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Actuarial present value of a level perpetuity</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.ax_due">
+<span class="sig-name descname"><span class="pre">ax_due</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.ax_due" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – start age</p></li>
+<li><p><strong>i</strong> – interest rate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Actuarial present value of a level perpetuity due</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.axn">
+<span class="sig-name descname"><span class="pre">axn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.axn" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – start age</p></li>
+<li><p><strong>i</strong> – interest rate</p></li>
+<li><p><strong>n</strong> – length of payments</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Actuarial present value of a temporary annuity</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.axn_due">
+<span class="sig-name descname"><span class="pre">axn_due</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.axn_due" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – start age</p></li>
+<li><p><strong>i</strong> – interest rate</p></li>
+<li><p><strong>n</strong> – length of payments</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Actuarial present value of a temporary annuity due</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.dx">
+<span class="sig-name descname"><span class="pre">dx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.dx" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – start age</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of failures between ages x and x + 1</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.ex">
+<span class="sig-name descname"><span class="pre">ex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.ex" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – start age</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The curtate life expectation at age x</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.get_lxs">
+<span class="sig-name descname"><span class="pre">get_lxs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#elizur.life.LifeTable.get_lxs" title="Link to this definition"></a></dt>
+<dd><p>This method is deprecated and will be removed in v1.0.0</p>
+<p>The recommended method is to use the ‘lxs’ property</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple of the population counts (lxs)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.get_pxs">
+<span class="sig-name descname"><span class="pre">get_pxs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#elizur.life.LifeTable.get_pxs" title="Link to this definition"></a></dt>
+<dd><p>This method is deprecated and will be removed in v1.0.0</p>
+<p>The recommended method is to use the ‘pxs’ property</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple of the survival
+probabilities (pxs), e.g., (0p1, 2p1, …, 100p99)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.get_qxs">
+<span class="sig-name descname"><span class="pre">get_qxs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#elizur.life.LifeTable.get_qxs" title="Link to this definition"></a></dt>
+<dd><p>This method is deprecated and will be removed in v1.0.0</p>
+<p>The recommended method is to use the ‘qxs’ property</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple of the failure
+probabilities (qxs), e.g., (0q1, 2q1, …, 100q99)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.lx">
+<span class="sig-name descname"><span class="pre">lx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.lx" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – age</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The population size at time x.  This is the same thing as the
+number of person years lived between age x and x + 1.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.mx">
+<span class="sig-name descname"><span class="pre">mx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.mx" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – start age</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The central failure rate between ages x and x + 1</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.ndx">
+<span class="sig-name descname"><span class="pre">ndx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.ndx" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – width of failure interval in years</p></li>
+<li><p><strong>x</strong> – start age</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of failures between ages x and x + n</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.nlx">
+<span class="sig-name descname"><span class="pre">nlx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.nlx" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – width of failure interval in years</p></li>
+<li><p><strong>x</strong> – start age</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of person years lived between ages x and x + n</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.nmx">
+<span class="sig-name descname"><span class="pre">nmx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.nmx" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – start age</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The central failure rate between ages x and x + n</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.npx">
+<span class="sig-name descname"><span class="pre">npx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.npx" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – width of survival interval in years</p></li>
+<li><p><strong>x</strong> – start age</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The probability of survival between ages x and x + n</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.npxs">
+<span class="sig-name descname"><span class="pre">npxs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.LifeTable.npxs" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>n</strong> – width of survival interval in years</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The probability of survival between ages x and x + n for all ages</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.nqx">
+<span class="sig-name descname"><span class="pre">nqx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.nqx" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – width of failure interval in years</p></li>
+<li><p><strong>x</strong> – start age</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The probability of failure between ages x and x + n</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.nqxs">
+<span class="sig-name descname"><span class="pre">nqxs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.LifeTable.nqxs" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>n</strong> – width of failure interval in years</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The probability of failure between ages x and x + n for all ages</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.px">
+<span class="sig-name descname"><span class="pre">px</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.px" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – start age</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The probability of survival between the ages x and x + 1</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.qx">
+<span class="sig-name descname"><span class="pre">qx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.qx" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – start age</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The probability of failure between the ages x and x + 1</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.to_frame">
+<span class="sig-name descname"><span class="pre">to_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#elizur.life.LifeTable.to_frame" title="Link to this definition"></a></dt>
+<dd><p>Export the life table as a Polars DataFrame.</p>
+<p>Each row represents one age from 0 to ω-1.  The resulting DataFrame
+is suitable for joining against policy-level DataFrames on the <code class="docutils literal notranslate"><span class="pre">age</span></code>
+column in actuarial projection engines (e.g. IFRS 17 cashflow models).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">age</span></code>: integer age from 0 to table_size - 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qx</span></code>: probability of death between age x and x + 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">px</span></code>: probability of survival between age x and x + 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lx</span></code>: expected number of lives at age x (radix = initial_pop)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dx</span></code>: expected number of deaths between age x and x + 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mx</span></code>: central death rate between age x and x + 1</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Polars DataFrame with columns</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.tqxn">
+<span class="sig-name descname"><span class="pre">tqxn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.LifeTable.tqxn" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> – width of the failure interval in years</p></li>
+<li><p><strong>n</strong> – width of the survival interval in years</p></li>
+<li><p><strong>x</strong> – start age</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The probability of surviving from age x to x + n and
+then failing between age x + n and age x + n + t</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.tqxns">
+<span class="sig-name descname"><span class="pre">tqxns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.LifeTable.tqxns" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> – width of the failure interval in years</p></li>
+<li><p><strong>n</strong> – width of the survival interval in years</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The probability of surviving from age x to x + n and
+then failing between age x + n and age x + n + t for all
+ages</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="elizur.life.LifeTable.w">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">w</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#elizur.life.LifeTable.w" title="Link to this definition"></a></dt>
+<dd><p>Returns:
+The limiting age of the life table</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="elizur.life.MultiDecrementTable">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">MultiDecrementTable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mortality</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="table.html#elizur.life.table.LifeTable" title="elizur.life.table.table.LifeTable"><span class="pre">LifeTable</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">lapse_rates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#elizur.life.MultiDecrementTable" title="Link to this definition"></a></dt>
+<dd><p>Two-decrement life table combining mortality and lapse decrements.</p>
+<p>Applies the independent decrements assumption with the UDD (Uniform
+Distribution of Deaths) approximation to convert single-decrement
+probabilities into multi-decrement probabilities.  This is the
+standard actuarial approach for IFRS 17 cashflow projection models
+where policies exit either by death or voluntary lapse.</p>
+<p>Under UDD, the multi-decrement probabilities are approximated as:</p>
+<blockquote>
+<div><p>q^(d)_x ≈ q’(d)_x × (1 - q’(w)_x / 2)
+q^(w)_x ≈ q’(w)_x × (1 - q’(d)_x / 2)
+q^(τ)_x  = 1 - (1 - q’(d)_x) × (1 - q’(w)_x)</p>
+</div></blockquote>
+<p>where q’(d) and q’(w) are the single-decrement (independent) mortality
+and lapse probabilities respectively.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mortality</strong> – Single-decrement mortality <code class="docutils literal notranslate"><span class="pre">LifeTable</span></code>.  The lapse
+rates must be aligned to the same age indices as this table.</p></li>
+<li><p><strong>lapse_rates</strong> – Annual lapse (withdrawal) rates indexed by age,
+starting from age 0.  Must have the same length as the
+mortality table.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If <code class="docutils literal notranslate"><span class="pre">lapse_rates</span></code> length does not match the
+    mortality table size.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.MultiDecrementTable.dx_d">
+<span class="sig-name descname"><span class="pre">dx_d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.MultiDecrementTable.dx_d" title="Link to this definition"></a></dt>
+<dd><p>Expected deaths between age x and x + 1 in the multi-decrement table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – Attained age.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Expected number of deaths between age x and x + 1.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#elizur.life.InvalidAge" title="elizur.life.InvalidAge"><strong>InvalidAge</strong></a> – If x is negative.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.MultiDecrementTable.dx_w">
+<span class="sig-name descname"><span class="pre">dx_w</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.MultiDecrementTable.dx_w" title="Link to this definition"></a></dt>
+<dd><p>Expected lapses between age x and x + 1 in the multi-decrement table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – Attained age.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Expected number of lapses between age x and x + 1.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#elizur.life.InvalidAge" title="elizur.life.InvalidAge"><strong>InvalidAge</strong></a> – If x is negative.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.MultiDecrementTable.lx_tau">
+<span class="sig-name descname"><span class="pre">lx_tau</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.MultiDecrementTable.lx_tau" title="Link to this definition"></a></dt>
+<dd><p>Expected number of lives in the multi-decrement table at age x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – Attained age.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Expected lives at age x under both mortality and lapse decrements.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#elizur.life.InvalidAge" title="elizur.life.InvalidAge"><strong>InvalidAge</strong></a> – If x is negative.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.MultiDecrementTable.npx_tau">
+<span class="sig-name descname"><span class="pre">npx_tau</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.MultiDecrementTable.npx_tau" title="Link to this definition"></a></dt>
+<dd><p>Probability of surviving all decrements for n years from age x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – Number of years.</p></li>
+<li><p><strong>x</strong> – Starting age.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Probability of surviving both mortality and lapse decrements
+from age x to age x + n.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#elizur.life.InvalidAge" title="elizur.life.InvalidAge"><strong>InvalidAge</strong></a> – If x is negative.</p></li>
+<li><p><a class="reference internal" href="#elizur.life.InvalidInterval" title="elizur.life.InvalidInterval"><strong>InvalidInterval</strong></a> – If n is not positive.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.MultiDecrementTable.px_tau">
+<span class="sig-name descname"><span class="pre">px_tau</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.MultiDecrementTable.px_tau" title="Link to this definition"></a></dt>
+<dd><p>Total multi-decrement survival probability at age x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – Attained age.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Probability of surviving all decrements between age x and x + 1.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#elizur.life.InvalidAge" title="elizur.life.InvalidAge"><strong>InvalidAge</strong></a> – If x is negative.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.MultiDecrementTable.qx_d">
+<span class="sig-name descname"><span class="pre">qx_d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.MultiDecrementTable.qx_d" title="Link to this definition"></a></dt>
+<dd><p>Multi-decrement probability of death at age x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – Attained age.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Probability of decrement by death between age x and x + 1
+in the multi-decrement table.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#elizur.life.InvalidAge" title="elizur.life.InvalidAge"><strong>InvalidAge</strong></a> – If x is negative.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.MultiDecrementTable.qx_tau">
+<span class="sig-name descname"><span class="pre">qx_tau</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.MultiDecrementTable.qx_tau" title="Link to this definition"></a></dt>
+<dd><p>Total multi-decrement probability at age x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – Attained age.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Probability of decrement by any cause between age x and x + 1.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#elizur.life.InvalidAge" title="elizur.life.InvalidAge"><strong>InvalidAge</strong></a> – If x is negative.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.MultiDecrementTable.qx_w">
+<span class="sig-name descname"><span class="pre">qx_w</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#elizur.life.MultiDecrementTable.qx_w" title="Link to this definition"></a></dt>
+<dd><p>Multi-decrement probability of lapse at age x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – Attained age.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Probability of decrement by lapse between age x and x + 1
+in the multi-decrement table.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#elizur.life.InvalidAge" title="elizur.life.InvalidAge"><strong>InvalidAge</strong></a> – If x is negative.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="elizur.life.MultiDecrementTable.table_size">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">table_size</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#elizur.life.MultiDecrementTable.table_size" title="Link to this definition"></a></dt>
+<dd><p>Number of ages in the table.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="elizur.life.MultiDecrementTable.to_frame">
+<span class="sig-name descname"><span class="pre">to_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#elizur.life.MultiDecrementTable.to_frame" title="Link to this definition"></a></dt>
+<dd><p>Export the multi-decrement table as a Polars DataFrame.</p>
+<p>Each row represents one age from 0 to ω-1.  The resulting DataFrame
+includes both the original single-decrement rates and the computed
+multi-decrement probabilities, making it suitable for joining against
+policy-level DataFrames in projection engines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">age</span></code>: integer age from 0 to table_size - 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qx_prime_d</span></code>: single-decrement mortality rate q’(d)_x</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qx_prime_w</span></code>: single-decrement lapse rate q’(w)_x</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qx_d</span></code>: multi-decrement mortality probability q^(d)_x</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qx_w</span></code>: multi-decrement lapse probability q^(w)_x</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qx_tau</span></code>: total decrement probability q^(τ)_x</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">px_tau</span></code>: total survival probability p^(τ)_x</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lx_tau</span></code>: expected lives in multi-decrement table</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dx_d</span></code>: expected deaths in multi-decrement table</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dx_w</span></code>: expected lapses in multi-decrement table</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Polars DataFrame with columns</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.annuity_due_fv">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">annuity_due_fv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.annuity_due_fv" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Future value of annuity of n years with an interest rate of i</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.annuity_due_pv">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">annuity_due_pv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.annuity_due_pv" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Present value of annuity of n years with an interest rate of i</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.annuity_fv">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">annuity_fv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.annuity_fv" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Future value of annuity of n years with an interest rate of i</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.annuity_pv">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">annuity_pv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.annuity_pv" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Present value of annuity of n years with an interest rate of i</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.decreasing_annuity_due_fv">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">decreasing_annuity_due_fv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.decreasing_annuity_due_fv" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Future value of a decreasing annuity due of n years with
+an interest rate of i.  It is assumed that the annuity payment
+decrements by 1 each period.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.decreasing_annuity_due_pv">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">decreasing_annuity_due_pv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.decreasing_annuity_due_pv" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Present value of a decreasing annuity due of n years with
+an interest rate of i.  It is assumed that the annuity payment
+decrements by 1 each period.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.decreasing_annuity_fv">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">decreasing_annuity_fv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.decreasing_annuity_fv" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Future value of a decreasing annuity of n years with
+an interest rate of i.  It is assumed that the annuity payment
+decrements by 1 each period.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.decreasing_annuity_pv">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">decreasing_annuity_pv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.decreasing_annuity_pv" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Present value of a decreasing annuity of n years with
+an interest rate of i.  It is assumed that the annuity payment
+decrements by 1 each period.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.discount_factor">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">discount_factor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.discount_factor" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>i</strong> – interest rate in decimal form</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The related discount factor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.discount_rate">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">discount_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.discount_rate" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>i</strong> – interest rate in decimal form</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The related discount rate</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.expected_present_value">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">expected_present_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cash_flows</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probabilities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interest_rates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.expected_present_value" title="Link to this definition"></a></dt>
+<dd><p>This function is useful for calculating variable streams of cash flows,
+interest rates, and probabilities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cash_flows</strong> – payouts from time 0 to n, where time n is the last</p></li>
+<li><p><strong>payout</strong> (<em>possible</em>)</p></li>
+<li><p><strong>e.g.</strong> (<em>cf0</em><em>, </em><em>cf1</em><em>, </em><em>cf2</em><em>, </em><em>...</em><em>, </em><em>cfn-1</em><em>, </em><em>cfn</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<p>:param :
+:type : cf0, cf1, cf2, …, cfn-1, cfn
+:param probabilities: probability of a cash flow occuring from time</p>
+<blockquote>
+<div><p>0 to n, e.g., (1p0, 2p1, 3p2, …, npn-1)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>interest_rates</strong> – collection of interest rates to use for
+discounting, where each interest rate is for one
+period, e.g., (i0to1, i1to2, …, in-1ton)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The expected present value</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>Given the probabilities: 1p0 = 0.98, 2p1=0.94, 3p2=0.91</p>
+<p>annuity(x=0, i=0.07, n=3)</p>
+<p>expected_present_value((1, 1, 1), (0.98, 0.94, 0.91), (0.07, 0.07, 0.07))</p>
+<p>The two methods of calculating the present value of an annuity are the same</p>
+<p>Additionally a two-dimensional arrays of inputs can be provided to perform
+multiple expected present values at once.  The work flows below produce the
+same results:</p>
+<p>expected_present_value((1, 1, 1), (0.98, 0.94, 0.91), (0.07, 0.07, 0.07))</p>
+<p>expected_present_value((1, 1, 1), (0.88, 0.84, 0.81), (0.06, 0.06, 0.06))</p>
+<p>expected_present_value((1, 1, 1), (0.78, 0.74, 0.71), (0.05, 0.05, 0.05))</p>
+<dl>
+<dt>expected_present_value(</dt><dd><dl class="simple">
+<dt>np.array([</dt><dd><p>[1, 1, 1],
+[1, 1, 1],
+[1, 1, 1]</p>
+</dd>
+</dl>
+<p>]),
+np.array([</p>
+<blockquote>
+<div><p>[0.98, 0.96, 0.91],
+[0.88, 0.86, 0.81],
+[0.78, 0.76, 0.71]</p>
+</div></blockquote>
+<p>]),
+np.array([</p>
+<blockquote>
+<div><p>[0.07, 0.07, 0.07],
+[0.06, 0.06, 0.06],
+[0.05, 0.05, 0.05]</p>
+</div></blockquote>
+<p>])</p>
+</dd>
+</dl>
+<p>)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.geo_increasing_annuity_pv">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">geo_increasing_annuity_pv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.geo_increasing_annuity_pv" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+<li><p><strong>k</strong> – periodic payment growth rate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Present value of a geometrically increasing annuity of
+n years with an interest rate of i and payment growth rate
+of k.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.increasing_annuity_due_fv">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">increasing_annuity_due_fv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.increasing_annuity_due_fv" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Future value of an increasing annuity due of n years with
+an interest rate of i.  It is assumed that the annuity payment
+increments by 1 each period.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.increasing_annuity_due_pv">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">increasing_annuity_due_pv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.increasing_annuity_due_pv" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Present value of an increasing annuity due of n years with
+an interest rate of i.  It is assumed that the annuity payment
+increments by 1 each period.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.increasing_annuity_fv">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">increasing_annuity_fv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.increasing_annuity_fv" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Future value of an increasing annuity of n years with
+an interest rate of i.  It is assumed that the annuity payment
+increments by 1 each period.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.increasing_annuity_pv">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">increasing_annuity_pv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.increasing_annuity_pv" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> – years</p></li>
+<li><p><strong>i</strong> – periodic interest rate in decimal form</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Present value of an increasing annuity of n years with
+an interest rate of i.  It is assumed that the annuity payment
+increments by 1 each period.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.interest_rate">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">interest_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.interest_rate" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>d</strong> – discount rate in decimal form</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The related interest rate in decimal form</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.perpetuity_due_pv">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">perpetuity_due_pv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.perpetuity_due_pv" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>i</strong> – periodic interest rate in decimal form</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Present value of a perpetuity due with an interest rate of i</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.perpetuity_pv">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">perpetuity_pv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ndarray</span></span></span><a class="headerlink" href="#elizur.life.perpetuity_pv" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>i</strong> – periodic interest rate in decimal form</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Present value of a perpetuity with an interest rate of i</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.read_soa_csv_mort_table">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">read_soa_csv_mort_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Windows-1252'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="util.html#elizur.life.util.soa.SoaTable" title="elizur.life.util.soa.SoaTable"><span class="pre">SoaTable</span></a></span></span><a class="headerlink" href="#elizur.life.read_soa_csv_mort_table" title="Link to this definition"></a></dt>
+<dd><p>Parse an SOA CSV mortality table file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> – The full file system path to the csv.</p></li>
+<li><p><strong>encoding</strong> – The text encoding of the csv data. Defaults to ‘Windows-1252’.</p></li>
+<li><p><strong>delimiter</strong> – The delimiter of the csv data. Defaults to ‘,’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A SoaTable with ‘metadata’ and ‘values’ keys.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.validate_age">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">validate_age</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">F</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">F</span></span></span><a class="headerlink" href="#elizur.life.validate_age" title="Link to this definition"></a></dt>
+<dd><p>Validate that the age argument <code class="docutils literal notranslate"><span class="pre">x</span></code> is non-negative.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>func</strong> – A method that accepts an age parameter named <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The wrapped function with age validation applied.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#elizur.life.InvalidAge" title="elizur.life.InvalidAge"><strong>InvalidAge</strong></a> – If <code class="docutils literal notranslate"><span class="pre">x</span></code> is less than 0.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.validate_interval">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">validate_interval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">F</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">F</span></span></span><a class="headerlink" href="#elizur.life.validate_interval" title="Link to this definition"></a></dt>
+<dd><p>Validate that the interval argument <code class="docutils literal notranslate"><span class="pre">n</span></code> is positive.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>func</strong> – A method that accepts an interval parameter named <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The wrapped function with interval validation applied.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#elizur.life.InvalidInterval" title="elizur.life.InvalidInterval"><strong>InvalidInterval</strong></a> – If <code class="docutils literal notranslate"><span class="pre">n</span></code> is less than or equal to 0.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="elizur.life.validate_t_interval">
+<span class="sig-prename descclassname"><span class="pre">elizur.life.</span></span><span class="sig-name descname"><span class="pre">validate_t_interval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">F</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">F</span></span></span><a class="headerlink" href="#elizur.life.validate_t_interval" title="Link to this definition"></a></dt>
+<dd><p>Validate that the failure interval argument <code class="docutils literal notranslate"><span class="pre">t</span></code> is positive.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>func</strong> – A method that accepts a failure interval parameter named <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The wrapped function with failure interval validation applied.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#elizur.life.InvalidInterval" title="elizur.life.InvalidInterval"><strong>InvalidInterval</strong></a> – If <code class="docutils literal notranslate"><span class="pre">t</span></code> is less than or equal to 0.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="life">
+<h1>Life<a class="headerlink" href="#life" title="Link to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="annuity.html">Annuity</a><ul>
@@ -162,44 +1418,66 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="table.html">Table</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="table.html#elizur.life.table.LifeTable"><code class="docutils literal notranslate"><span class="pre">LifeTable</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.dx"><code class="docutils literal notranslate"><span class="pre">LifeTable.dx()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.qx"><code class="docutils literal notranslate"><span class="pre">LifeTable.qx()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.px"><code class="docutils literal notranslate"><span class="pre">LifeTable.px()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.lx"><code class="docutils literal notranslate"><span class="pre">LifeTable.lx()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.ex"><code class="docutils literal notranslate"><span class="pre">LifeTable.ex()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.mx"><code class="docutils literal notranslate"><span class="pre">LifeTable.mx()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.nqx"><code class="docutils literal notranslate"><span class="pre">LifeTable.nqx()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.nqxs"><code class="docutils literal notranslate"><span class="pre">LifeTable.nqxs()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.npx"><code class="docutils literal notranslate"><span class="pre">LifeTable.npx()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.npxs"><code class="docutils literal notranslate"><span class="pre">LifeTable.npxs()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.nlx"><code class="docutils literal notranslate"><span class="pre">LifeTable.nlx()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.ndx"><code class="docutils literal notranslate"><span class="pre">LifeTable.ndx()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.nmx"><code class="docutils literal notranslate"><span class="pre">LifeTable.nmx()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.tqxn"><code class="docutils literal notranslate"><span class="pre">LifeTable.tqxn()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.tqxns"><code class="docutils literal notranslate"><span class="pre">LifeTable.tqxns()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Dx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Dx()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Nx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Nx()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Sx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Sx()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Cx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Cx()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Mx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Mx()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Rx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Rx()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Ax"><code class="docutils literal notranslate"><span class="pre">LifeTable.Ax()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Axn"><code class="docutils literal notranslate"><span class="pre">LifeTable.Axn()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.IAx"><code class="docutils literal notranslate"><span class="pre">LifeTable.IAx()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.IAxn"><code class="docutils literal notranslate"><span class="pre">LifeTable.IAxn()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.ax"><code class="docutils literal notranslate"><span class="pre">LifeTable.ax()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.axn"><code class="docutils literal notranslate"><span class="pre">LifeTable.axn()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.ax_due"><code class="docutils literal notranslate"><span class="pre">LifeTable.ax_due()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.axn_due"><code class="docutils literal notranslate"><span class="pre">LifeTable.axn_due()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.get_lxs"><code class="docutils literal notranslate"><span class="pre">LifeTable.get_lxs()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.get_qxs"><code class="docutils literal notranslate"><span class="pre">LifeTable.get_qxs()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.w"><code class="docutils literal notranslate"><span class="pre">LifeTable.w</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html#lifetable">LifeTable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.LifeTable"><code class="docutils literal notranslate"><span class="pre">LifeTable</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.qx"><code class="docutils literal notranslate"><span class="pre">LifeTable.qx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.px"><code class="docutils literal notranslate"><span class="pre">LifeTable.px()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.lx"><code class="docutils literal notranslate"><span class="pre">LifeTable.lx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.dx"><code class="docutils literal notranslate"><span class="pre">LifeTable.dx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.ex"><code class="docutils literal notranslate"><span class="pre">LifeTable.ex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.mx"><code class="docutils literal notranslate"><span class="pre">LifeTable.mx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.nqx"><code class="docutils literal notranslate"><span class="pre">LifeTable.nqx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.nqxs"><code class="docutils literal notranslate"><span class="pre">LifeTable.nqxs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.npx"><code class="docutils literal notranslate"><span class="pre">LifeTable.npx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.npxs"><code class="docutils literal notranslate"><span class="pre">LifeTable.npxs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.nlx"><code class="docutils literal notranslate"><span class="pre">LifeTable.nlx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.ndx"><code class="docutils literal notranslate"><span class="pre">LifeTable.ndx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.nmx"><code class="docutils literal notranslate"><span class="pre">LifeTable.nmx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.tqxn"><code class="docutils literal notranslate"><span class="pre">LifeTable.tqxn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.tqxns"><code class="docutils literal notranslate"><span class="pre">LifeTable.tqxns()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Dx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Dx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Nx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Nx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Sx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Sx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Cx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Cx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Mx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Mx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Rx"><code class="docutils literal notranslate"><span class="pre">LifeTable.Rx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Ax"><code class="docutils literal notranslate"><span class="pre">LifeTable.Ax()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.Axn"><code class="docutils literal notranslate"><span class="pre">LifeTable.Axn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.IAx"><code class="docutils literal notranslate"><span class="pre">LifeTable.IAx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.IAxn"><code class="docutils literal notranslate"><span class="pre">LifeTable.IAxn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.ax"><code class="docutils literal notranslate"><span class="pre">LifeTable.ax()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.axn"><code class="docutils literal notranslate"><span class="pre">LifeTable.axn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.ax_due"><code class="docutils literal notranslate"><span class="pre">LifeTable.ax_due()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.axn_due"><code class="docutils literal notranslate"><span class="pre">LifeTable.axn_due()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.to_frame"><code class="docutils literal notranslate"><span class="pre">LifeTable.to_frame()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.get_lxs"><code class="docutils literal notranslate"><span class="pre">LifeTable.get_lxs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.get_qxs"><code class="docutils literal notranslate"><span class="pre">LifeTable.get_qxs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.LifeTable.w"><code class="docutils literal notranslate"><span class="pre">LifeTable.w</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="table.html#multidecrementtable">MultiDecrementTable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="table.html#elizur.life.table.MultiDecrementTable"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.MultiDecrementTable.dx_d"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.dx_d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.MultiDecrementTable.dx_w"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.dx_w()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.MultiDecrementTable.lx_tau"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.lx_tau()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.MultiDecrementTable.npx_tau"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.npx_tau()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.MultiDecrementTable.px_tau"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.px_tau()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.MultiDecrementTable.qx_d"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.qx_d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.MultiDecrementTable.qx_tau"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.qx_tau()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.MultiDecrementTable.qx_w"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.qx_w()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.MultiDecrementTable.table_size"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.table_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html#elizur.life.table.MultiDecrementTable.to_frame"><code class="docutils literal notranslate"><span class="pre">MultiDecrementTable.to_frame()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="util.html">Util</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="util.html#elizur.life.util.soa.SoaTable"><code class="docutils literal notranslate"><span class="pre">SoaTable</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="util.html#elizur.life.util.soa.SoaTableMetadata"><code class="docutils literal notranslate"><span class="pre">SoaTableMetadata</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="util.html#elizur.life.util.soa.read_soa_csv_mort_table"><code class="docutils literal notranslate"><span class="pre">read_soa_csv_mort_table()</span></code></a></li>
 </ul>
 </li>
@@ -224,7 +1502,7 @@
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
-
+   
 
 </footer>
         </div>
@@ -235,7 +1513,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
+  </script> 
 
 </body>
 </html>
