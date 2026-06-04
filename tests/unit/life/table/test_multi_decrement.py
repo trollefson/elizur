@@ -58,9 +58,7 @@ def test_multi_decrement__dx_d_and_dx_w_sum_to_total_decrements(mdt):
 
 
 def test_multi_decrement__npx_tau_consistent_with_lx(mdt):
-    assert round(mdt.npx_tau(2, 0), 10) == round(
-        mdt.lx_tau(2) / mdt.lx_tau(0), 10
-    )
+    assert round(mdt.npx_tau(2, 0), 10) == round(mdt.lx_tau(2) / mdt.lx_tau(0), 10)
 
 
 def test_multi_decrement__qx_d_out_of_bounds_returns_one(mdt):
@@ -104,9 +102,16 @@ def test_multi_decrement__to_frame_shape(mdt):
 def test_multi_decrement__to_frame_columns(mdt):
     frame = mdt.to_frame()
     assert frame.columns == [
-        "age", "qx_prime_d", "qx_prime_w",
-        "qx_d", "qx_w", "qx_tau", "px_tau",
-        "lx_tau", "dx_d", "dx_w",
+        "age",
+        "qx_prime_d",
+        "qx_prime_w",
+        "qx_d",
+        "qx_w",
+        "qx_tau",
+        "px_tau",
+        "lx_tau",
+        "dx_d",
+        "dx_w",
     ]
 
 

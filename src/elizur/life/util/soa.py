@@ -1,89 +1,110 @@
 import csv
-from typing import Dict, List
+from typing import TypedDict
+
+
+class SoaTableMetadata(TypedDict, total=False):
+    """Metadata parsed from an SOA CSV mortality table header."""
+
+    min_age: int
+    max_age: int
+    table_line_start: int
+    name: str
+    description: str
+    author: str
+    reference: str
+    comments: str
+    content_type: str
+    study_nation: str
+    table_increment: str
+    scaling_factor: str
+    soa_table_identity: str
+
+
+class SoaTable(TypedDict):
+    """Parsed SOA mortality table with metadata and qx values."""
+
+    metadata: SoaTableMetadata
+    values: tuple[float, ...]
 
 
 def read_soa_csv_mort_table(
-    file_path, encoding: str = "Windows-1252", delimiter: str = ","
-) -> Dict:
-    """
+    file_path: str, encoding: str = "Windows-1252", delimiter: str = ","
+) -> SoaTable:
+    """Parse an SOA CSV mortality table file.
+
     Args:
-        file_path: The full file system path to the csv
-        encoding: The text encoding of the csv data.  It defaults to 'Windows-1252'.
-        delimiter: The delimiter of the csv data.  It defaults to ','.
+        file_path: The full file system path to the csv.
+        encoding: The text encoding of the csv data. Defaults to 'Windows-1252'.
+        delimiter: The delimiter of the csv data. Defaults to ','.
 
     Returns:
-        A dictionary with a 'values' and 'metadata' key.
+        A SoaTable with 'metadata' and 'values' keys.
     """
     raw_csv = _open_soa_csv_mort_table(
         file_path, encoding=encoding, delimiter=delimiter
     )
-    processed_csv = _process_soa_csv_mort_table(raw_csv)
-    return processed_csv
+    return _process_soa_csv_mort_table(raw_csv)
 
 
 def _open_soa_csv_mort_table(
     file_path: str, encoding: str = "Windows-1252", delimiter: str = ","
-) -> List[List[str]]:
-    """
+) -> list[list[str]]:
+    """Read an SOA CSV mortality table file into a list of rows.
+
     Args:
         file_path: The full system path to the SOA csv table.
-        url: The full HTTP url to the SOA csv table.
-        encoding: The text encoding of the csv data.  It defaults to 'Windows-1252'.
-        delimiter: The delimiter of the csv data.  It defaults to ','.
+        encoding: The text encoding of the csv data. Defaults to 'Windows-1252'.
+        delimiter: The delimiter of the csv data. Defaults to ','.
 
     Returns:
-        A list of lists representing the csv table.  Each interior
-        list has two elements representing the first and second
-        columns.
+        A list of rows, each row being a list of column strings.
     """
-    encoded_csv = open(file_path, encoding=encoding)
-    raw_csv = list(csv.reader(encoded_csv, delimiter=delimiter))
-    return raw_csv
+    with open(file_path, encoding=encoding) as f:
+        return list(csv.reader(f, delimiter=delimiter))
 
 
-def _process_soa_csv_mort_table(raw_csv: List[List[str]]) -> Dict:
-    """
+def _process_soa_csv_mort_table(raw_csv: list[list[str]]) -> SoaTable:
+    """Parse a raw SOA CSV into a structured SoaTable.
+
     Args:
-        raw_csv: A list of lists representing the csv table.  Each interior
-                 list has two elements representing the first and second
-                 columns.
+        raw_csv: A list of rows from the SOA CSV file.
 
     Returns:
-        A dictionary with a 'values' and 'metadata' key.
+        A SoaTable with 'metadata' and 'values' keys.
     """
-    # pylint: disable=too-many-branches
-    table = {"metadata": {}, "values": ()}
+    metadata: SoaTableMetadata = {}  # type: ignore[typeddict-item]
     for index, row in enumerate(raw_csv):
-        if row:
-            if row[0] == "Row, Column (if applicable)->MinScaleValue:":
-                table["metadata"]["min_age"] = int(row[1])
-            elif row[0] == "Row, Column (if applicable)->MaxScaleValue:":
-                table["metadata"]["max_age"] = int(row[1])
-            elif row[0] == "Row\\Column":
-                table["metadata"]["table_line_start"] = index + 1
-            elif row[0] == "Table Name:":
-                table["metadata"]["name"] = row[1]
-            elif row[0] == "Table Description:":
-                table["metadata"]["description"] = row[1]
-            elif row[0] == "Provider Name:":
-                table["metadata"]["author"] = row[1]
-            elif row[0] == "Table Reference:":
-                table["metadata"]["reference"] = row[1]
-            elif row[0] == "Comments:":
-                table["metadata"]["comments"] = row[1]
-            elif row[0] == "Content Type:":
-                table["metadata"]["content_type"] = row[1]
-            elif row[0] == "Nation:":
-                table["metadata"]["study_nation"] = row[1]
-            elif row[0] == "Row, Column (if applicable)->Increment:":
-                table["metadata"]["table_increment"] = row[1]
-            elif row[0] == "Scaling Factor:":
-                table["metadata"]["scaling_factor"] = row[1]
-            elif row[0] == "Table Identity":
-                table["metadata"]["soa_table_identity"] = row[1]
-    table_start = table["metadata"]["table_line_start"]
-    max_age = table["metadata"]["max_age"]
-    min_age = table["metadata"]["min_age"]
-    table_end = table_start + max_age - min_age + 1
-    table["values"] = tuple([float(row[1]) for row in raw_csv[table_start:table_end]])
-    return table
+        if not row:
+            continue
+        match row[0]:
+            case "Row, Column (if applicable)->MinScaleValue:":
+                metadata["min_age"] = int(row[1])
+            case "Row, Column (if applicable)->MaxScaleValue:":
+                metadata["max_age"] = int(row[1])
+            case "Row\\Column":
+                metadata["table_line_start"] = index + 1
+            case "Table Name:":
+                metadata["name"] = row[1]
+            case "Table Description:":
+                metadata["description"] = row[1]
+            case "Provider Name:":
+                metadata["author"] = row[1]
+            case "Table Reference:":
+                metadata["reference"] = row[1]
+            case "Comments:":
+                metadata["comments"] = row[1]
+            case "Content Type:":
+                metadata["content_type"] = row[1]
+            case "Nation:":
+                metadata["study_nation"] = row[1]
+            case "Row, Column (if applicable)->Increment:":
+                metadata["table_increment"] = row[1]
+            case "Scaling Factor:":
+                metadata["scaling_factor"] = row[1]
+            case "Table Identity":
+                metadata["soa_table_identity"] = row[1]
+
+    table_start = metadata["table_line_start"]
+    table_end = table_start + metadata["max_age"] - metadata["min_age"] + 1
+    values = tuple(float(row[1]) for row in raw_csv[table_start:table_end])
+    return SoaTable(metadata=metadata, values=values)

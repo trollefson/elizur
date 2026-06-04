@@ -1,4 +1,4 @@
-from typing import Iterable, Union
+from collections.abc import Iterable
 
 import numpy as np
 
@@ -12,10 +12,10 @@ class InvalidEPVInputs(Exception):
 
 
 def expected_present_value(
-    cash_flows: Union[Iterable, np.ndarray],
-    probabilities: Union[Iterable, np.ndarray],
-    interest_rates: Union[Iterable, np.ndarray],
-) -> Union[float, np.ndarray]:
+    cash_flows: Iterable | np.ndarray,
+    probabilities: Iterable | np.ndarray,
+    interest_rates: Iterable | np.ndarray,
+) -> float | np.ndarray:
     """
     This function is useful for calculating variable streams of cash flows,
     interest rates, and probabilities.

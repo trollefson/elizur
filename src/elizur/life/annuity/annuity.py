@@ -1,12 +1,12 @@
 import numbers
-from typing import Iterable, Union
+from collections.abc import Iterable
 
 import numpy as np
 
 
 def discount_factor(
-    i: Union[float, Iterable, np.array],
-) -> Union[float, Iterable, np.array]:
+    i: float | Iterable | np.ndarray,
+) -> float | Iterable | np.ndarray:
     """
     Args:
         i: interest rate in decimal form
@@ -17,8 +17,8 @@ def discount_factor(
 
 
 def interest_rate(
-    d: Union[float, Iterable, np.array],
-) -> Union[float, Iterable, np.array]:
+    d: float | Iterable | np.ndarray,
+) -> float | Iterable | np.ndarray:
     """
     Args:
         d: discount rate in decimal form
@@ -29,8 +29,8 @@ def interest_rate(
 
 
 def discount_rate(
-    i: Union[float, Iterable, np.array],
-) -> Union[float, Iterable, np.array]:
+    i: float | Iterable | np.ndarray,
+) -> float | Iterable | np.ndarray:
     """
     Args:
         i: interest rate in decimal form
@@ -41,8 +41,8 @@ def discount_rate(
 
 
 def annuity_pv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: int | Iterable | np.ndarray, i: float | Iterable | np.ndarray
+) -> float | Iterable | np.ndarray:
     """
     Args:
         n: years
@@ -54,8 +54,8 @@ def annuity_pv(
 
 
 def annuity_due_pv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: int | Iterable | np.ndarray, i: float | Iterable | np.ndarray
+) -> float | Iterable | np.ndarray:
     """
     Args:
         n: years
@@ -67,8 +67,8 @@ def annuity_due_pv(
 
 
 def perpetuity_pv(
-    i: Union[float, Iterable, np.array],
-) -> Union[float, Iterable, np.array]:
+    i: float | Iterable | np.ndarray,
+) -> float | Iterable | np.ndarray:
     """
     Args:
         i: periodic interest rate in decimal form
@@ -79,8 +79,8 @@ def perpetuity_pv(
 
 
 def perpetuity_due_pv(
-    i: Union[float, Iterable, np.array],
-) -> Union[float, Iterable, np.array]:
+    i: float | Iterable | np.ndarray,
+) -> float | Iterable | np.ndarray:
     """
     Args:
         i: periodic interest rate in decimal form
@@ -91,8 +91,8 @@ def perpetuity_due_pv(
 
 
 def annuity_fv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: int | Iterable | np.ndarray, i: float | Iterable | np.ndarray
+) -> float | Iterable | np.ndarray:
     """
     Args:
         n: years
@@ -104,8 +104,8 @@ def annuity_fv(
 
 
 def annuity_due_fv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: int | Iterable | np.ndarray, i: float | Iterable | np.ndarray
+) -> float | Iterable | np.ndarray:
     """
     Args:
         n: years
@@ -117,8 +117,8 @@ def annuity_due_fv(
 
 
 def increasing_annuity_pv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: int | Iterable | np.ndarray, i: float | Iterable | np.ndarray
+) -> float | Iterable | np.ndarray:
     """
     Args:
         n: years
@@ -134,8 +134,8 @@ def increasing_annuity_pv(
 
 
 def increasing_annuity_fv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: int | Iterable | np.ndarray, i: float | Iterable | np.ndarray
+) -> float | Iterable | np.ndarray:
     """
     Args:
         n: years
@@ -149,8 +149,8 @@ def increasing_annuity_fv(
 
 
 def increasing_annuity_due_pv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: int | Iterable | np.ndarray, i: float | Iterable | np.ndarray
+) -> float | Iterable | np.ndarray:
     """
     Args:
         n: years
@@ -164,8 +164,8 @@ def increasing_annuity_due_pv(
 
 
 def increasing_annuity_due_fv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: int | Iterable | np.ndarray, i: float | Iterable | np.ndarray
+) -> float | Iterable | np.ndarray:
     """
     Args:
         n: years
@@ -179,8 +179,8 @@ def increasing_annuity_due_fv(
 
 
 def decreasing_annuity_pv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: int | Iterable | np.ndarray, i: float | Iterable | np.ndarray
+) -> float | Iterable | np.ndarray:
     """
     Args:
         n: years
@@ -194,8 +194,8 @@ def decreasing_annuity_pv(
 
 
 def decreasing_annuity_fv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: int | Iterable | np.ndarray, i: float | Iterable | np.ndarray
+) -> float | Iterable | np.ndarray:
     """
     Args:
         n: years
@@ -209,8 +209,8 @@ def decreasing_annuity_fv(
 
 
 def decreasing_annuity_due_pv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: int | Iterable | np.ndarray, i: float | Iterable | np.ndarray
+) -> float | Iterable | np.ndarray:
     """
     Args:
         n: years
@@ -224,8 +224,8 @@ def decreasing_annuity_due_pv(
 
 
 def decreasing_annuity_due_fv(
-    n: Union[int, Iterable, np.array], i: Union[float, Iterable, np.array]
-) -> Union[float, Iterable, np.array]:
+    n: int | Iterable | np.ndarray, i: float | Iterable | np.ndarray
+) -> float | Iterable | np.ndarray:
     """
     Args:
         n: years
@@ -239,10 +239,10 @@ def decreasing_annuity_due_fv(
 
 
 def geo_increasing_annuity_pv(
-    n: Union[int, Iterable, np.array],
-    i: Union[int, Iterable, np.array],
-    k: Union[int, Iterable, np.array],
-) -> Union[float, Iterable, np.array]:
+    n: int | Iterable | np.ndarray,
+    i: int | Iterable | np.ndarray,
+    k: int | Iterable | np.ndarray,
+) -> float | Iterable | np.ndarray:
     """
     Args:
         n: years

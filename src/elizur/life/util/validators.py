@@ -32,7 +32,7 @@ def _get_args_dict(fn: Callable[..., object], args: tuple, kwargs: dict) -> dict
     while hasattr(original, "__wrapped__"):
         original = original.__wrapped__
     args_names = original.__code__.co_varnames[: original.__code__.co_argcount]
-    return {**dict(zip(args_names, args)), **kwargs}
+    return {**dict(zip(args_names, args, strict=False)), **kwargs}
 
 
 def validate_age(func: F) -> F:

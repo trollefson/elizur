@@ -2,9 +2,8 @@
 import numpy as np
 import pytest
 
-from elizur.life import expected_present_value, InvalidEPVInputs
+from elizur.life import InvalidEPVInputs, expected_present_value
 from elizur.life.table import LifeTable
-
 
 TEST_TABLE = (
     0.006271,
@@ -198,11 +197,8 @@ def test_expected_present_value__raises_InvalidEPVInputs_when_lengths_do_not_mat
     cash_flows = tuple([1] * (n + 1))
     interest_rates = tuple([0.07] * n)
 
-    try:
+    with pytest.raises(InvalidEPVInputs):
         expected_present_value(cash_flows, probabilities, interest_rates)
-        assert False
-    except InvalidEPVInputs:
-        assert True
 
 
 def test_expected_present_value__raises_InvalidEPVInputs_when_ndim_greater_than_2(
@@ -213,8 +209,5 @@ def test_expected_present_value__raises_InvalidEPVInputs_when_ndim_greater_than_
     cash_flows = np.array([[tuple([1] * n), tuple([1] * n), tuple([1] * n)]])
     interest_rates = tuple([0.07] * n)
 
-    try:
+    with pytest.raises(InvalidEPVInputs):
         expected_present_value(cash_flows, probabilities, interest_rates)
-        assert False
-    except InvalidEPVInputs:
-        assert True

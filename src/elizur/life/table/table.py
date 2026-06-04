@@ -148,7 +148,7 @@ class LifeTable:
         return (self.lx(x) - self.lx(n + x)) / self.lx(x)
 
     @validate_interval
-    def nqxs(self, n: int) -> np.array:
+    def nqxs(self, n: int) -> np.ndarray:
         """
         Args:
             n: width of failure interval in years
@@ -180,7 +180,7 @@ class LifeTable:
         return self.lx(n + x) / self.lx(x)
 
     @validate_interval
-    def npxs(self, n: int) -> np.array:
+    def npxs(self, n: int) -> np.ndarray:
         """
         Args:
             n: width of survival interval in years
@@ -261,7 +261,7 @@ class LifeTable:
             return 1.0
         return self.npx(n, x) * self.nqx(t, x + n)
 
-    def tqxns(self, t: int, n: int) -> np.array:
+    def tqxns(self, t: int, n: int) -> np.ndarray:
         """
         Args:
             t: width of the failure interval in years

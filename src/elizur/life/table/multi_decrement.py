@@ -62,9 +62,9 @@ class MultiDecrementTable:
 
         # Lives in multi-decrement table
         radix = mortality.lxs[0]
-        self._lx_tau: np.ndarray = radix * np.insert(
-            np.cumprod(self._px_tau), 0, 1.0
-        )[: mortality.table_size]
+        self._lx_tau: np.ndarray = (
+            radix * np.insert(np.cumprod(self._px_tau), 0, 1.0)[: mortality.table_size]
+        )
         self._dx_d: np.ndarray = self._lx_tau * self._qx_d
         self._dx_w: np.ndarray = self._lx_tau * self._qx_w
 

@@ -4,7 +4,6 @@ from elizur.life.annuity import discount_factor
 from elizur.life.table import LifeTable
 from elizur.life.util import InvalidAge, InvalidInterval
 
-
 TEST_TABLE = (
     0.006271,
     0.00041799999999999997,
@@ -262,64 +261,64 @@ def test_life_table__npx_invalid_x_n(life_table):
 
 def test_life_table__nlx_invalid_x_n(life_table):
     with pytest.raises(InvalidInterval):
-        life_table.nlx(-2, 1) == 0
+        life_table.nlx(-2, 1)
     with pytest.raises(InvalidAge):
-        life_table.nlx(2, -1) == 0
+        life_table.nlx(2, -1)
     with pytest.raises(InvalidAge):
-        life_table.nlx(-2, -1) == 0
+        life_table.nlx(-2, -1)
     with pytest.raises(InvalidAge):
-        life_table.nlx(0, -1) == 0
+        life_table.nlx(0, -1)
     with pytest.raises(InvalidInterval):
-        life_table.nlx(0, 1) == 0
+        life_table.nlx(0, 1)
 
 
 def test_life_table__ndx_invalid_x_n(life_table):
     with pytest.raises(InvalidInterval):
-        life_table.ndx(-2, 1) == 0
+        life_table.ndx(-2, 1)
     with pytest.raises(InvalidAge):
-        life_table.ndx(2, -1) == 0
+        life_table.ndx(2, -1)
     with pytest.raises(InvalidAge):
-        life_table.ndx(-2, -1) == 0
+        life_table.ndx(-2, -1)
     with pytest.raises(InvalidAge):
-        life_table.ndx(0, -1) == 0
+        life_table.ndx(0, -1)
     with pytest.raises(InvalidInterval):
-        life_table.ndx(0, 1) == 0
+        life_table.ndx(0, 1)
 
 
 def test_life_table__nmx_invalid_x_n(life_table):
     with pytest.raises(InvalidInterval):
-        life_table.nmx(-2, 1) == 0
+        life_table.nmx(-2, 1)
     with pytest.raises(InvalidAge):
-        life_table.nmx(2, -1) == 0
+        life_table.nmx(2, -1)
     with pytest.raises(InvalidAge):
-        life_table.nmx(-2, -1) == 0
+        life_table.nmx(-2, -1)
     with pytest.raises(InvalidAge):
-        life_table.nmx(0, -1) == 0
+        life_table.nmx(0, -1)
     with pytest.raises(InvalidInterval):
-        life_table.nmx(0, 1) == 0
+        life_table.nmx(0, 1)
 
 
 def test_life_table__tqxn_invalid_x_n_t(life_table):
     with pytest.raises(InvalidInterval):
-        life_table.tqxn(-2, 1, 1) == 0
+        life_table.tqxn(-2, 1, 1)
     with pytest.raises(InvalidInterval):
-        life_table.tqxn(2, -1, 1) == 0
+        life_table.tqxn(2, -1, 1)
     with pytest.raises(InvalidAge):
-        life_table.tqxn(2, 1, -1) == 0
+        life_table.tqxn(2, 1, -1)
     with pytest.raises(InvalidInterval):
-        life_table.tqxn(-1, -1, 1) == 0
+        life_table.tqxn(-1, -1, 1)
     with pytest.raises(InvalidAge):
-        life_table.tqxn(-1, 1, -1) == 0
+        life_table.tqxn(-1, 1, -1)
     with pytest.raises(InvalidAge):
-        life_table.tqxn(1, -1, -1) == 0
+        life_table.tqxn(1, -1, -1)
     with pytest.raises(InvalidInterval):
-        life_table.tqxn(-2, -1, 0) == 0
+        life_table.tqxn(-2, -1, 0)
     with pytest.raises(InvalidInterval):
-        life_table.tqxn(0, 2, 2) == 0
+        life_table.tqxn(0, 2, 2)
     with pytest.raises(InvalidInterval):
-        life_table.tqxn(0, 0, 2) == 0
+        life_table.tqxn(0, 0, 2)
     with pytest.raises(InvalidInterval):
-        life_table.tqxn(0, 0, 0) == 0
+        life_table.tqxn(0, 0, 0)
 
 
 def test_life_table__get_qxs(life_table):
@@ -667,13 +666,16 @@ def test_life_table__to_frame_age_column(life_table):
     assert frame["age"].to_list() == list(range(life_table.table_size))
 
 
-@pytest.mark.parametrize("col,method", [
-    ("qx", "qx"),
-    ("px", "px"),
-    ("lx", "lx"),
-    ("dx", "dx"),
-    ("mx", "mx"),
-])
+@pytest.mark.parametrize(
+    "col,method",
+    [
+        ("qx", "qx"),
+        ("px", "px"),
+        ("lx", "lx"),
+        ("dx", "dx"),
+        ("mx", "mx"),
+    ],
+)
 def test_life_table__to_frame_values_match_methods(life_table, col, method):
     frame = life_table.to_frame()
     for age, row_val in enumerate(frame[col].to_list()):
