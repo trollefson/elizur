@@ -3,8 +3,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![CI](https://github.com/trollefson/elizur/actions/workflows/lint-and-test.yml/badge.svg)](https://github.com/trollefson/elizur/actions/workflows/lint-and-test.yml)
 [![PyPI version](https://badge.fury.io/py/elizur.svg)](https://badge.fury.io/py/elizur)
-[![Coverage Status](https://coveralls.io/repos/github/trollefson/elizur/badge.svg?branch=master)](https://coveralls.io/github/trollefson/elizur?branch=master)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
 Elizur is an open source finance package for actuaries, finance professionals, and students.  The package currently helps with calculating annuity present values, annuity future values, cash flow expected present values, and life contingencies.  Elizur depends only on the Python 3 standard library and [NumPy](https://numpy.org>) at runtime.  The project is named after [Elizur Wright](https://en.wikipedia.org/wiki/Elizur_Wright).
 
