@@ -1,6 +1,6 @@
 [project]
 name = "elizur"
-version = "0.2.2"
+version = "0.3.0"
 description = "Elizur is a finance library for actuaries, finance professionals, and students"
 authors = [{ name = "Tanner Rollefson", email = "trollefson@gmail.com" }]
 readme = "README.md"
