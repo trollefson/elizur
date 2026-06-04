@@ -12,7 +12,7 @@ If you like Elizur, support the project by clicking the :star: above!
 
 ## Requirements
 
-* [Python 3.5+](https://www.python.org/downloads/)
+* [Python 3.12+](https://www.python.org/downloads/)
 
 ## Install
 
